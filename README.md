@@ -57,4 +57,10 @@ chatBotFAIREESS/
 ## 🤝 Contribuer
 
 Les améliorations sont les bienvenues ! Pour corriger un bug ou proposer une nouvelle fonctionnalité, merci de créer une *issue* ou une *pull request*.
+
+## 👀 Visualisation
+
+Pour voir un exemple fonctionnel du chatbot, vous pouvez consulter la version en ligne via ce lien :  
+[Visualiser le chatbot FAIRE ESS](https://htmlpreview.github.io/?https://raw.githubusercontent.com/Alec34pi/chatBotFAIREESS/master/index.html)
+
 ---
