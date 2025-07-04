@@ -9,7 +9,11 @@ document.addEventListener('DOMContentLoaded', function ()
             const popupState = document.createElement('div');
             popupState.id =    'uk-popupState-chatbot';
             
-                const popupMascotte = document.createElement('div');
+                const popupMascotte = document.createElement('video');
+                popupMascotte.src = 'https://raw.githubusercontent.com/Alec34pi/IRTSMascotte/master/popupM.mp4';
+                popupMascotte.loop = true;
+                popupMascotte.muted = true;
+                popupMascotte.playsInline = true;
                 popupMascotte.id =    'uk-popupMascotte-chatbot';
 
 
@@ -38,8 +42,13 @@ document.addEventListener('DOMContentLoaded', function ()
                     initTitle.className =   'uk-title-chatbot';
                     initTitle.textContent = 'Bonjour !';
                     
-                    const initMascotte = document.createElement('div');
-                    initMascotte.id =    'uk-initMascotte-chatbot';
+                    const initMascotte = document.createElement('video');
+                    initMascotte.src =          'https://raw.githubusercontent.com/Alec34pi/IRTSMascotte/master/initM.mp4';
+                    initMascotte.loop =         true;
+                    initMascotte.muted =        true;
+                    initMascotte.autoplay = true;
+                    initMascotte.playsInline =  true;
+                    initMascotte.id =           'uk-initMascotte-chatbot';
                     
                     const initButtons = document.createElement('div');
                     initButtons.id =    'uk-initButtons-chatbot';
@@ -88,7 +97,11 @@ document.addEventListener('DOMContentLoaded', function ()
                         messageInnerFormation.id =    'uk-messageInnerFormation-formation-chatbot';
                         messageZoneFormation.appendChild(messageInnerFormation);
                         
-                    const formationMascotte = document.createElement('div');
+                    const formationMascotte = document.createElement('video');
+                    formationMascotte.src = 'https://raw.githubusercontent.com/Alec34pi/IRTSMascotte/master/tchatM.mp4';
+                    formationMascotte.loop = true;
+                    formationMascotte.muted = true;
+                    formationMascotte.playsInline = true;
                     formationMascotte.id =    'uk-formationMascotte-formation-chatbot';
                     
                     const texteZoneFormation = document.createElement('div');
@@ -204,7 +217,11 @@ document.addEventListener('DOMContentLoaded', function ()
                         messageInnerSite.id =    'uk-messageInnerSite-Site-chatbot';
                         messageZoneSite.appendChild(messageInnerSite);
                         
-                    const siteMascotte = document.createElement('div');
+                    const siteMascotte = document.createElement('video');
+                    siteMascotte.src = 'https://raw.githubusercontent.com/Alec34pi/IRTSMascotte/master/tchatM.mp4';
+                    siteMascotte.loop = true;
+                    siteMascotte.muted = true;
+                    siteMascotte.playsInline = true;
                     siteMascotte.id =    'uk-siteMascotte-chatbot';
                     
                     
@@ -358,8 +375,7 @@ document.addEventListener('DOMContentLoaded', function ()
             overflow: hidden;
             cursor: pointer;
             display: block;
-            border: 1.5px solid #c04848;
-            background-color: white;
+            background-color: #BB3E49;
             opacity: 1;
         }
 
@@ -479,11 +495,11 @@ document.addEventListener('DOMContentLoaded', function ()
             {
                 width: 250px;
                 height: 250px;
-                background-color: gray;
                 margin: 20px auto;
                 margin-top: 50px;
                 transition: all 0.3s ease;
                 opacity: 1;
+                border-radius: 15px;
             }
             #uk-initButtons-chatbot
             {
@@ -660,7 +676,6 @@ document.addEventListener('DOMContentLoaded', function ()
                 left: 45px;
                 margin: none;
                 z-index: 10;
-                background-color: gray;
                 margin: 20px auto;
                 opacity: 1;
             }
@@ -1083,7 +1098,6 @@ document.addEventListener('DOMContentLoaded', function ()
                     left: 45px;
                     margin: none;
                     z-index: 100;
-                    background-color: gray;
                     margin: 20px auto;
                     opacity: 1;
                 }
@@ -1255,8 +1269,26 @@ document.addEventListener('DOMContentLoaded', function ()
         popupState.style.display =            'none';
         mainContent.style.display =           'block';
         mainContentBackground.style.display = 'block';
-        initPage.style.display =              'block';
+        initPage.style.display =              'flex';
     }
+
+
+    /**
+     * 
+     * ttttt
+     */
+    initMascotte.addEventListener('canplay', () => {
+        initMascotte.play().catch(e => console.log('Lecture initMascotte refusé'));
+    });
+    popupMascotte.addEventListener('canplay', () => {
+        popupMascotte.play().catch(e => console.log('Lecteur popupMascotte refusé'))
+    })
+    formationMascotte.addEventListener('canplay', () => {
+        formationMascotte.play().catch(e => console.log('Lecteur popupMascotte refusé'))
+    })
+    siteMascotte.addEventListener('canplay', () => {
+        siteMascotte.play().catch(e => console.log('Lecteur popupMascotte refusé'))
+    })
 
 
     /**
@@ -2506,7 +2538,7 @@ document.addEventListener('DOMContentLoaded', function ()
         function retourAccueil()
         {
             formationPage.style.display =   'none';
-            initPage.style.display =        'block';
+            initPage.style.display =        'flex';
 
             messageInnerFormation.innerHTML = '';
         }
@@ -3450,7 +3482,7 @@ document.addEventListener('DOMContentLoaded', function ()
         function retourAccueil()
         {
             sitePage.style.display =        'none';
-            initPage.style.display =        'block';
+            initPage.style.display =        'flex';
 
             messageInnerSite.innerHTML =    '';
         }
