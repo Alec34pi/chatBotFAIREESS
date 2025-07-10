@@ -5,270 +5,247 @@ document.addEventListener('DOMContentLoaded', function ()
     const isolatedWrapper =     document.createElement('div');
     isolatedWrapper.className = 'uk-sandbox-chatbot';
 
+        const popupState = document.createElement('div');
+        popupState.id =    'uk-popupState-chatbot';
+        
+            const popupMascotte =       document.createElement('video');
+            popupMascotte.src =         'https://raw.githubusercontent.com/Alec34pi/IRTSMascotte/master/popupM.mp4';
+            popupMascotte.loop =        true;
+            popupMascotte.muted =       true;
+            popupMascotte.playsInline = true;
+            popupMascotte.id =          'uk-popupMascotte-chatbot';
 
-            const popupState = document.createElement('div');
-            popupState.id =    'uk-popupState-chatbot';
+        const mainContent = document.createElement('div');
+        mainContent.id =    'uk-mainContent-chatbot';
+        
+        const mainContentBackground = document.createElement('div');
+        mainContentBackground.id =    'uk-mainContent-chatbot-background';
+
+            const closeBtnBorder =     document.createElement('div');
+            closeBtnBorder.className = 'uk-closeBtnBorder-chatbot';
+            closeBtnBorder.id =        'uk-closeBtnBorder-chatbot';
             
-                const popupMascotte = document.createElement('video');
-                popupMascotte.src = 'https://raw.githubusercontent.com/Alec34pi/IRTSMascotte/master/popupM.mp4';
-                popupMascotte.loop = true;
-                popupMascotte.muted = true;
-                popupMascotte.playsInline = true;
-                popupMascotte.id =    'uk-popupMascotte-chatbot';
-
-
-            const mainContent = document.createElement('div');
-            mainContent.id =    'uk-mainContent-chatbot';
+                const closeBtn =       document.createElement('button');
+                closeBtn.className =   'uk-close-btn-chatbot';
+                closeBtn.id =          'closeBtn-chatbot';
+                closeBtn.title =       'Fermer';
+                closeBtn.textContent = 'X';
+        
+            const initPage = document.createElement('div');
+            initPage.id =    'uk-initPage-chatbot';
             
-            const mainContentBackground = document.createElement('div');
-            mainContentBackground.id =    'uk-mainContent-chatbot-background';
-
-            
-                const closeBtnBorder =     document.createElement('div');
-                closeBtnBorder.className = 'uk-closeBtnBorder-chatbot';
-                closeBtnBorder.id =        'uk-closeBtnBorder-chatbot';
+                const initTitle =       document.createElement('div');
+                initTitle.className =   'uk-title-chatbot';
+                initTitle.textContent = 'Bonjour !';
                 
-                    const closeBtn =       document.createElement('button');
-                    closeBtn.className =   'uk-close-btn-chatbot';
-                    closeBtn.id =          'closeBtn-chatbot';
-                    closeBtn.title =       'Fermer';
-                    closeBtn.textContent = 'X';
-            
-
-                const initPage = document.createElement('div');
-                initPage.id =    'uk-initPage-chatbot';
-                
-                    const initTitle =       document.createElement('div');
-                    initTitle.className =   'uk-title-chatbot';
-                    initTitle.textContent = 'Bonjour !';
-                    
-                    const initMascotte = document.createElement('video');
+                const initMascotte = document.createElement('video');
                     initMascotte.src =          'https://raw.githubusercontent.com/Alec34pi/IRTSMascotte/master/initM.mp4';
                     initMascotte.loop =         true;
                     initMascotte.muted =        true;
-                    initMascotte.autoplay = true;
+                    initMascotte.autoplay =     true;
                     initMascotte.playsInline =  true;
                     initMascotte.id =           'uk-initMascotte-chatbot';
-                    
-                    const initButtons = document.createElement('div');
-                    initButtons.id =    'uk-initButtons-chatbot';
-                    
-                        const siteBtn =       document.createElement('button');
-                        siteBtn.className =   'uk-initBtn-chatbot';
-                        siteBtn.id =          'initSiteBouton-chatbot';
-                        siteBtn.title =       "M'orienter sur le site";
-                        siteBtn.textContent = "M'orienter sur le site";
-                        
-                        const formationBtn =       document.createElement('button');
-                        formationBtn.className =   'uk-initBtn-chatbot';
-                        formationBtn.id =          'initFormationBouton-chatbot';
-                        formationBtn.title =       'Trouver ma formation';
-                        formationBtn.textContent = 'Trouver ma formation';
-
-
-                const formationPage = document.createElement('div');
-                formationPage.id =    'uk-Page-chatbot';
                 
-                    const buttonsBorderFormation =     document.createElement('div');
-                    buttonsBorderFormation.className = 'uk-buttonsBorder-formation-chatbot';
-                    buttonsBorderFormation.id =        'uk-buttonsBorder-formation-chatbot';
+                const initButtons = document.createElement('div');
+                initButtons.id =    'uk-initButtons-chatbot';
+                
+                    const siteBtn =       document.createElement('button');
+                    siteBtn.className =   'uk-initBtn-chatbot';
+                    siteBtn.id =          'initSiteBouton-chatbot';
+                    siteBtn.title =       "M'orienter sur le site";
+                    siteBtn.textContent = "M'orienter sur le site";
                     
-                        const backBtnFormation =       document.createElement('button');
-                        backBtnFormation.className =   'uk-back-btn-formation-chatbot';
-                        backBtnFormation.id =          'backBtn-formation-chatbot';
-                        backBtnFormation.title =       'Retour';
-                        backBtnFormation.textContent = '←';
-                        
-                        const resetBtnFormation =       document.createElement('button');
-                        resetBtnFormation.className =   'uk-reset-btn-formation-chatbot';
-                        resetBtnFormation.id =          'resetBtn-formation-chatbot';
-                        resetBtnFormation.title =       'Réinitialiser';
-                        resetBtnFormation.textContent = '↻';
+                    const formationBtn =       document.createElement('button');
+                    formationBtn.className =   'uk-initBtn-chatbot';
+                    formationBtn.id =          'initFormationBouton-chatbot';
+                    formationBtn.title =       'Trouver ma formation';
+                    formationBtn.textContent = 'Trouver ma formation';
 
-                        
-                    const formationTitle =       document.createElement('div');
-                    formationTitle.className =   'uk-title-chatbot';
-                    formationTitle.textContent = 'Trouver ma formation';
+            const formationPage = document.createElement('div');
+            formationPage.id =    'uk-Page-chatbot';
+            
+                const buttonsBorderFormation =     document.createElement('div');
+                buttonsBorderFormation.className = 'uk-buttonsBorder-formation-chatbot';
+                buttonsBorderFormation.id =        'uk-buttonsBorder-formation-chatbot';
+                
+                    const backBtnFormation =       document.createElement('button');
+                    backBtnFormation.className =   'uk-back-btn-formation-chatbot';
+                    backBtnFormation.id =          'backBtn-formation-chatbot';
+                    backBtnFormation.title =       'Retour';
+                    backBtnFormation.textContent = '←';
                     
-                    const messageZoneFormation = document.createElement('div');
-                    messageZoneFormation.id =    'uk-formationMessageZone-formation-chatbot';
+                    const resetBtnFormation =       document.createElement('button');
+                    resetBtnFormation.className =   'uk-reset-btn-formation-chatbot';
+                    resetBtnFormation.id =          'resetBtn-formation-chatbot';
+                    resetBtnFormation.title =       'Réinitialiser';
+                    resetBtnFormation.textContent = '↻';
+
+                const formationTitle =       document.createElement('div');
+                formationTitle.className =   'uk-title-chatbot';
+                formationTitle.textContent = 'Trouver ma formation';
+                
+                const messageZoneFormation = document.createElement('div');
+                messageZoneFormation.id =    'uk-formationMessageZone-formation-chatbot';
+                
+                    const messageInnerFormation = document.createElement('div');
+                    messageInnerFormation.id =    'uk-messageInnerFormation-formation-chatbot';
+                    messageZoneFormation.appendChild(messageInnerFormation);
                     
-                        const messageInnerFormation = document.createElement('div');
-                        messageInnerFormation.id =    'uk-messageInnerFormation-formation-chatbot';
-                        messageZoneFormation.appendChild(messageInnerFormation);
-                        
-                    const formationMascotte = document.createElement('video');
+                const formationMascotte =   document.createElement('video');
                     formationMascotte.src = 'https://raw.githubusercontent.com/Alec34pi/IRTSMascotte/master/tchatM.mp4';
                     formationMascotte.loop = true;
                     formationMascotte.muted = true;
                     formationMascotte.playsInline = true;
                     formationMascotte.id =    'uk-formationMascotte-formation-chatbot';
-                    
-                    const texteZoneFormation = document.createElement('div');
-                    texteZoneFormation.id =    'uk-formationTexteZone-formation-chatbot';
-                    
-                        const texteInputFormation =       document.createElement('input');
-                        texteInputFormation.type =        'text';
-                        texteInputFormation.id =          'uk-formationInputText-formation-chatbot';
-                        texteInputFormation.placeholder = 'Zone de texte...';
-                        texteInputFormation.maxLength =   '50';
-
-                        
-                    const rangeZoneFormation = document.createElement('div');
-                    rangeZoneFormation.id =    'uk-formationRangeZone-formation-chatbot';
-                    
-                        const rangeInputFormation = document.createElement('input');
-                        rangeInputFormation.type =  'range';
-                        rangeInputFormation.id =    'uk-formationInputRange-formation-chatbot';
-                        rangeInputFormation.min =   '0';
-                        rangeInputFormation.max =   '100';
-                        
-                        const rangeValueFormation =       document.createElement('span');
-                        rangeValueFormation.id =          'uk-formationRangeValue-formation-chatbot';
-                        rangeValueFormation.textContent = '50%';
-
-                        
-                    const buttonsZoneFormation = document.createElement('div');
-                    buttonsZoneFormation.id =    'uk-formationButtonsZone-formation-chatbot';
-                    
-                        const btnOuiFormation =       document.createElement('button');
-                        btnOuiFormation.id =          'uk-btnOui-formation-chatbot';
-                        btnOuiFormation.textContent = 'Oui';
-                        const btnNonFormation =       document.createElement('button');
-                        btnNonFormation.id =          'uk-btnNon-formation-chatbot';
-                        btnNonFormation.textContent = 'Non';
-
-                    const selectZoneFormation = document.createElement('div');
-                    selectZoneFormation.id =    'uk-formationSelectZone-formation-chatbot';
-                        const jobSelectFormation = document.createElement('select');
-                        jobSelectFormation.id =    'uk-formationJobSelect-formation-chatbot';
-                            const defaultOptionFormation =       document.createElement('option');
-                            defaultOptionFormation.value =       '';
-                            defaultOptionFormation.disabled =    true;
-                            defaultOptionFormation.selected =    true;
-                            defaultOptionFormation.textContent = 'Choisir un métier...';
-
-                    const finishZoneFormation = document.createElement('div');
-                    finishZoneFormation.id =    'uk-formationsFinishZone-formation-chatbot';
-                        const finishBtnFormation =       document.createElement('button');
-                        finishBtnFormation.id =          'uk-formationFinishBtn-formation-chatbot';
-                        finishBtnFormation.textContent = 'Réinitialiser le chat';
-
-                    const choiceZoneFormation = document.createElement('div');
-                    choiceZoneFormation.id =    'uk-formationsChoiceZone-formation-chatbot';
-                    
-                        const returnChoiceZoneFormation =        document.createElement('button');
-                        returnChoiceZoneFormation.id =           'uk-formationResetChoiceZoneBtn-formation-chatbot';
-                        returnChoiceZoneFormation.textContent =  'Retour aux formations conseillé';
-                        returnChoiceZoneFormation.disabled =     true;
-                        
-                        const returnCritere =        document.createElement('button');
-                        returnCritere.id =           'uk-formationResetChatZoneBtn-formation-chatbot';
-                        returnCritere.textContent =  'Retour aux choix des compétences';
-                        returnCritere.disabled =     true;
-
-                        
-                    const validateBtnFormation1 =     document.createElement('button');
-                    validateBtnFormation1.id =        'uk-formationValidateBtn1-formation-chatbot';
-                    validateBtnFormation1.title =     'valider';
-                    validateBtnFormation1.innerHTML = `
-                        <svg width="20" height="20" fill="black" viewBox="0 0 16 16">
-                            <path d="M13.485 1.929a.75.75 0 0 1 1.06 1.06L6.06 11.475a.75.75 0 0 1-1.06 0L1.455 7.93a.75.75 0 0 1 1.06-1.06L5.5 9.854l7.985-7.925z"/>
-                        </svg>`;
-
-                        
-                    const validateBtnFormation2 =     document.createElement('button');
-                    validateBtnFormation2.id =        'uk-formationValidateBtn2-formation-chatbot';
-                    validateBtnFormation2.title =     'valider';
-                    validateBtnFormation2.innerHTML = `
-                        <svg width="20" height="20" fill="black" viewBox="0 0 16 16">
-                            <path d="M13.485 1.929a.75.75 0 0 1 1.06 1.06L6.06 11.475a.75.75 0 0 1-1.06 0L1.455 7.93a.75.75 0 0 1 1.06-1.06L5.5 9.854l7.985-7.925z"/>
-                        </svg>`;
-
-                        
-                const sitePage = document.createElement('div');
-                sitePage.id =    'uk-Page-chatbot';
                 
-                    const buttonsBorderSite =     document.createElement('div');
-                    buttonsBorderSite.className = 'uk-buttonsBorder-Site-chatbot';
-                    buttonsBorderSite.id =        'uk-buttonsBorder-Site-chatbot';
-                    
-                        const backBtnSite =       document.createElement('button');
-                        backBtnSite.className =   'uk-back-btn-Site-chatbot';
-                        backBtnSite.id =          'backBtn-Site-chatbot';
-                        backBtnSite.title =       'Retour';
-                        backBtnSite.textContent = '←';
-                        
-                        const resetBtnSite =       document.createElement('button');
-                        resetBtnSite.className =   'uk-reset-btn-Site-chatbot';
-                        resetBtnSite.id =          'resetBtn-Site-chatbot';
-                        resetBtnSite.title =       'Réinitialiser';
-                        resetBtnSite.textContent = '↻';
+                const texteZoneFormation = document.createElement('div');
+                texteZoneFormation.id =    'uk-formationTexteZone-formation-chatbot';
+                
+                    const texteInputFormation =       document.createElement('input');
+                    texteInputFormation.type =        'text';
+                    texteInputFormation.id =          'uk-formationInputText-formation-chatbot';
+                    texteInputFormation.placeholder = 'Zone de texte...';
+                    texteInputFormation.maxLength =   '50';
 
-                        
-                    const SiteTitle =       document.createElement('div');
-                    SiteTitle.className =   'uk-title-chatbot';
-                    SiteTitle.textContent = 'Orientation sur le Site';
+                const rangeZoneFormation = document.createElement('div');
+                rangeZoneFormation.id =    'uk-formationRangeZone-formation-chatbot';
+                
+                    const rangeInputFormation = document.createElement('input');
+                    rangeInputFormation.type =  'range';
+                    rangeInputFormation.id =    'uk-formationInputRange-formation-chatbot';
+                    rangeInputFormation.min =   '0';
+                    rangeInputFormation.max =   '100';
                     
-                    const messageZoneSite = document.createElement('div');
-                    messageZoneSite.id =    'uk-SiteMessageZone-Site-chatbot';
+                    const rangeValueFormation =       document.createElement('span');
+                    rangeValueFormation.id =          'uk-formationRangeValue-formation-chatbot';
+                    rangeValueFormation.textContent = '50%';
+
+                const buttonsZoneFormation = document.createElement('div');
+                buttonsZoneFormation.id =    'uk-formationButtonsZone-formation-chatbot';
+                
+                    const btnOuiFormation =       document.createElement('button');
+                    btnOuiFormation.id =          'uk-btnOui-formation-chatbot';
+                    btnOuiFormation.textContent = 'Oui';
+                    const btnNonFormation =       document.createElement('button');
+                    btnNonFormation.id =          'uk-btnNon-formation-chatbot';
+                    btnNonFormation.textContent = 'Non';
+
+                const selectZoneFormation =     document.createElement('div');
+                selectZoneFormation.id =        'uk-formationSelectZone-formation-chatbot';
+
+                    const jobSelectFormation =  document.createElement('select');
+                    jobSelectFormation.id =     'uk-formationJobSelect-formation-chatbot';
+
+                        const defaultOptionFormation =       document.createElement('option');
+                        defaultOptionFormation.value =       '';
+                        defaultOptionFormation.disabled =    true;
+                        defaultOptionFormation.selected =    true;
+                        defaultOptionFormation.textContent = 'Choisir un métier...';
+
+                const finishZoneFormation = document.createElement('div');
+                finishZoneFormation.id =    'uk-formationsFinishZone-formation-chatbot';
+
+                    const finishBtnFormation =       document.createElement('button');
+                    finishBtnFormation.id =          'uk-formationFinishBtn-formation-chatbot';
+                    finishBtnFormation.textContent = 'Réinitialiser le chat';
+
+                const choiceZoneFormation = document.createElement('div');
+                choiceZoneFormation.id =    'uk-formationsChoiceZone-formation-chatbot';
+                
+                    const returnChoiceZoneFormation =        document.createElement('button');
+                    returnChoiceZoneFormation.id =           'uk-formationResetChoiceZoneBtn-formation-chatbot';
+                    returnChoiceZoneFormation.textContent =  'Retour aux formations conseillé';
+                    returnChoiceZoneFormation.disabled =     true;
                     
-                        const messageInnerSite = document.createElement('div');
-                        messageInnerSite.id =    'uk-messageInnerSite-Site-chatbot';
-                        messageZoneSite.appendChild(messageInnerSite);
-                        
-                    const siteMascotte = document.createElement('video');
+                    const returnCritere =        document.createElement('button');
+                    returnCritere.id =           'uk-formationResetChatZoneBtn-formation-chatbot';
+                    returnCritere.textContent =  'Retour aux choix des compétences';
+                    returnCritere.disabled =     true;
+
+                const validateBtnFormation1 =     document.createElement('button');
+                validateBtnFormation1.id =        'uk-formationValidateBtn1-formation-chatbot';
+                validateBtnFormation1.title =     'valider';
+                validateBtnFormation1.innerHTML = `
+                    <svg width="20" height="20" fill="black" viewBox="0 0 16 16"> <path d="M13.485 1.929a.75.75 0 0 1 1.06 1.06L6.06 11.475a.75.75 0 0 1-1.06 0L1.455 7.93a.75.75 0 0 1 1.06-1.06L5.5 9.854l7.985-7.925z"/> </svg>`;
+
+                const validateBtnFormation2 =     document.createElement('button');
+                validateBtnFormation2.id =        'uk-formationValidateBtn2-formation-chatbot';
+                validateBtnFormation2.title =     'valider';
+                validateBtnFormation2.innerHTML = `<svg width="20" height="20" fill="black" viewBox="0 0 16 16"> <path d="M13.485 1.929a.75.75 0 0 1 1.06 1.06L6.06 11.475a.75.75 0 0 1-1.06 0L1.455 7.93a.75.75 0 0 1 1.06-1.06L5.5 9.854l7.985-7.925z"/> </svg>`;
+
+            const sitePage = document.createElement('div');
+            sitePage.id =    'uk-Page-chatbot';
+            
+                const buttonsBorderSite =     document.createElement('div');
+                buttonsBorderSite.className = 'uk-buttonsBorder-Site-chatbot';
+                buttonsBorderSite.id =        'uk-buttonsBorder-Site-chatbot';
+                
+                    const backBtnSite =       document.createElement('button');
+                    backBtnSite.className =   'uk-back-btn-Site-chatbot';
+                    backBtnSite.id =          'backBtn-Site-chatbot';
+                    backBtnSite.title =       'Retour';
+                    backBtnSite.textContent = '←';
+                    
+                    const resetBtnSite =       document.createElement('button');
+                    resetBtnSite.className =   'uk-reset-btn-Site-chatbot';
+                    resetBtnSite.id =          'resetBtn-Site-chatbot';
+                    resetBtnSite.title =       'Réinitialiser';
+                    resetBtnSite.textContent = '↻';
+
+                const SiteTitle =       document.createElement('div');
+                SiteTitle.className =   'uk-title-chatbot';
+                SiteTitle.textContent = 'Orientation sur le Site';
+                
+                const messageZoneSite = document.createElement('div');
+                messageZoneSite.id =    'uk-SiteMessageZone-Site-chatbot';
+                
+                    const messageInnerSite = document.createElement('div');
+                    messageInnerSite.id =    'uk-messageInnerSite-Site-chatbot';
+                    messageZoneSite.appendChild(messageInnerSite);
+                    
+                const siteMascotte = document.createElement('video');
                     siteMascotte.src = 'https://raw.githubusercontent.com/Alec34pi/IRTSMascotte/master/tchatM.mp4';
                     siteMascotte.loop = true;
                     siteMascotte.muted = true;
                     siteMascotte.playsInline = true;
                     siteMascotte.id =    'uk-siteMascotte-chatbot';
+
+                const buttonsZoneSite = document.createElement('div');
+                buttonsZoneSite.id =    'uk-SiteButtonsZone-Site-chatbot';
+                
+                    const btnOuiSite =       document.createElement('button');
+                    btnOuiSite.id =          'uk-btnOui-Site-chatbot';
+                    btnOuiSite.textContent = 'Oui';
                     
+                    const btnNonSite =       document.createElement('button');
+                    btnNonSite.id =          'uk-btnNon-Site-chatbot';
+                    btnNonSite.textContent = 'Non';
                     
-                    const buttonsZoneSite = document.createElement('div');
-                    buttonsZoneSite.id =    'uk-SiteButtonsZone-Site-chatbot';
+                const selectZoneSite = document.createElement('div');
+                selectZoneSite.id =    'uk-SiteSelectZone-Site-chatbot';
+                
+                    const jobSelectSite = document.createElement('select');
+                    jobSelectSite.id =    'uk-SiteJobSelect-Site-chatbot';
                     
-                        const btnOuiSite =       document.createElement('button');
-                        btnOuiSite.id =          'uk-btnOui-Site-chatbot';
-                        btnOuiSite.textContent = 'Oui';
+                        const defaultOptionSite =       document.createElement('option');
+                        defaultOptionSite.value =       '';
+                        defaultOptionSite.disabled =    true;
+                        defaultOptionSite.selected =    true;
+                        defaultOptionSite.textContent = 'Choisir un métier...';
                         
-                        const btnNonSite =       document.createElement('button');
-                        btnNonSite.id =          'uk-btnNon-Site-chatbot';
-                        btnNonSite.textContent = 'Non';
-
-                        
-                    const selectZoneSite = document.createElement('div');
-                    selectZoneSite.id =    'uk-SiteSelectZone-Site-chatbot';
+                const finishZoneSite = document.createElement('div');
+                finishZoneSite.id =    'uk-SitesFinishZone-Site-chatbot';
+                
+                    const finishBtnSite =       document.createElement('button');
+                    finishBtnSite.id =          'uk-SiteFinishBtn-Site-chatbot';
+                    finishBtnSite.textContent = 'Réinitialiser le chat';
                     
-                        const jobSelectSite = document.createElement('select');
-                        jobSelectSite.id =    'uk-SiteJobSelect-Site-chatbot';
-                        
-                            const defaultOptionSite =       document.createElement('option');
-                            defaultOptionSite.value =       '';
-                            defaultOptionSite.disabled =    true;
-                            defaultOptionSite.selected =    true;
-                            defaultOptionSite.textContent = 'Choisir un métier...';
+                const validateBtnSite =     document.createElement('button');
+                validateBtnSite.id =        'uk-SiteValidateBtn-Site-chatbot';
+                validateBtnSite.title =     'valider';
+                validateBtnSite.innerHTML = `<svg width="20" height="20" fill="black" viewBox="0 0 16 16"> <path d="M13.485 1.929a.75.75 0 0 1 1.06 1.06L6.06 11.475a.75.75 0 0 1-1.06 0L1.455 7.93a.75.75 0 0 1 1.06-1.06L5.5 9.854l7.985-7.925z"/> </svg>`;
+         
 
-                            
-                    const finishZoneSite = document.createElement('div');
-                    finishZoneSite.id =    'uk-SitesFinishZone-Site-chatbot';
-                    
-                        const finishBtnSite =       document.createElement('button');
-                        finishBtnSite.id =          'uk-SiteFinishBtn-Site-chatbot';
-                        finishBtnSite.textContent = 'Réinitialiser le chat';
-
-                        
-                    const validateBtnSite =     document.createElement('button');
-                    validateBtnSite.id =        'uk-SiteValidateBtn-Site-chatbot';
-                    validateBtnSite.title =     'valider';
-                    validateBtnSite.innerHTML = `
-                        <svg width="20" height="20" fill="black" viewBox="0 0 16 16">
-                            <path d="M13.485 1.929a.75.75 0 0 1 1.06 1.06L6.06 11.475a.75.75 0 0 1-1.06 0L1.455 7.93a.75.75 0 0 1 1.06-1.06L5.5 9.854l7.985-7.925z"/>
-                        </svg>`;
-            
-
-
-                    
     popupState.appendChild(popupMascotte);
 
     closeBtnBorder.appendChild(closeBtn);
@@ -311,7 +288,6 @@ document.addEventListener('DOMContentLoaded', function ()
     formationPage.appendChild(choiceZoneFormation);
     formationPage.appendChild(validateBtnFormation1);
     formationPage.appendChild(validateBtnFormation2);
-
 
     buttonsBorderSite.appendChild(backBtnSite);
     buttonsBorderSite.appendChild(resetBtnSite);
@@ -403,7 +379,6 @@ document.addEventListener('DOMContentLoaded', function ()
                 left: 50%;
                 transform: translate(-50%, -50%);
                 display: block;
-                background-color: gray;
                 opacity: 1;
             }
 
@@ -493,6 +468,7 @@ document.addEventListener('DOMContentLoaded', function ()
         }
             #uk-initMascotte-chatbot
             {
+                background: gray;
                 width: 250px;
                 height: 250px;
                 margin: 20px auto;
@@ -669,6 +645,7 @@ document.addEventListener('DOMContentLoaded', function ()
 
             #uk-formationMascotte-formation-chatbot
             {
+                background: gray;
                 width: 100px;
                 height: 100px;
                 position: absolute;
@@ -963,7 +940,7 @@ document.addEventListener('DOMContentLoaded', function ()
 
 
 
-    
+
             .uk-buttonsBorder-Site-chatbot
             {
                 position: absolute;
@@ -1091,6 +1068,7 @@ document.addEventListener('DOMContentLoaded', function ()
 
                 #uk-siteMascotte-chatbot
                 {
+                    background-color: gray;
                     width: 100px;
                     height: 100px;
                     position: absolute;
@@ -1274,24 +1252,6 @@ document.addEventListener('DOMContentLoaded', function ()
 
 
     /**
-     * 
-     * ttttt
-     */
-    initMascotte.addEventListener('canplay', () => {
-        initMascotte.play().catch(e => console.log('Lecture initMascotte refusé'));
-    });
-    popupMascotte.addEventListener('canplay', () => {
-        popupMascotte.play().catch(e => console.log('Lecteur popupMascotte refusé'))
-    })
-    formationMascotte.addEventListener('canplay', () => {
-        formationMascotte.play().catch(e => console.log('Lecteur popupMascotte refusé'))
-    })
-    siteMascotte.addEventListener('canplay', () => {
-        siteMascotte.play().catch(e => console.log('Lecteur popupMascotte refusé'))
-    })
-
-
-    /**
      * Gère la fermeture de la pop-up de formation.
      * 
      * Déclenchée lorsque l’utilisateur clique sur le bouton `closeBtn`, cette fonction
@@ -1357,7 +1317,6 @@ document.addEventListener('DOMContentLoaded', function ()
         if (chatHistoryFormation.length > 2)
         {
             afficherZone('text');
-
             chatHistoryFormation.pop();
 
             chatHistoryFormation.forEach(item =>
@@ -1371,7 +1330,6 @@ document.addEventListener('DOMContentLoaded', function ()
                     showFicheMetier(messageInnerFormation, item.content, false);
                 }
             });
-
             switch (currentStepFormation)
             {
                 case 'start' :
@@ -1464,7 +1422,7 @@ document.addEventListener('DOMContentLoaded', function ()
             });
         }
 
-        
+
         /**
          * Demande à l’utilisateur s’il a une expérience dans le travail social.
          * 
@@ -1639,7 +1597,7 @@ document.addEventListener('DOMContentLoaded', function ()
             } 
         }
 
-        
+
         /**
          * Propose à l’utilisateur de consulter la fiche métier d’un métier sélectionné.
          * 
@@ -1860,7 +1818,7 @@ document.addEventListener('DOMContentLoaded', function ()
 
             setTimeout(() =>
             {
-                showMessageFormation(messageInnerFormation, "je vais te poser des question et tu me diras si tu penses posséder cette faculté ou pas.", 'bot');
+                showMessageFormation(messageInnerFormation, "Je vais te poser des questions et tu me diras si tu penses posséder cette faculté ou pas.", 'bot');
             }, 250);
 
             const SoftSkillsData =
@@ -1870,7 +1828,7 @@ document.addEventListener('DOMContentLoaded', function ()
                 "l'autonomie",
                 "le sens des responsabilités",
                 "la discipline et l'auto-discipline",
-                "la gestion du stresse",
+                "la gestion du stress",
                 "l'audace",
                 "l'esprit d'initiative",
                 "la gestion du temps",
@@ -1879,11 +1837,11 @@ document.addEventListener('DOMContentLoaded', function ()
                 "l'intelligence émotionnelle, parfois appelée empathie",
                 "la négociation",
                 "la capacité à déléguer",
-                "la tolérence",
+                "la tolérance",
                 "la confiance en soi",
                 "la résolution de conflits et la méditation",
-                "le leadership ou capacité à motiver",
-                "la capaciter à créer et entretenir un réseau",
+                "Le leadership ou capacité à motiver",
+                "la capacité à créer et entretenir un réseau",
                 "la mémoire",
                 "l'attention et la concentration",
                 "l'esprit critique",
@@ -1977,7 +1935,7 @@ document.addEventListener('DOMContentLoaded', function ()
                 remplirListeNiveau();
                 afficherZone('list1');
 
-                showMessageFormation(messageInnerFormation, "quelle niveau d'étude possèdes-tu ?", 'bot');
+                showMessageFormation(messageInnerFormation, "Quel niveau d'étude possèdes-tu ?", 'bot');
 
                 validateBtnFormation1.addEventListener('click', handleNiveauSubmit);
                 function handleNiveauSubmit()
@@ -2653,7 +2611,6 @@ document.addEventListener('DOMContentLoaded', function ()
 
 
 
-
     siteBtn.addEventListener('click', chercherSite)
     function chercherSite()
     {
@@ -2667,7 +2624,7 @@ document.addEventListener('DOMContentLoaded', function ()
         [
             {
                 value: 1,
-                text: "Découvrir notre identité (nous connaitre)",
+                text: "Découvrir notre identité (nous connaître)",
                 lien: ""
             },
             {
@@ -2677,7 +2634,7 @@ document.addEventListener('DOMContentLoaded', function ()
             },
             {
                 value: 3,
-                text: "Nos etablissements et leurs liens à l'internationnal",
+                text: "Nos établissements et leurs liens à l'international",
                 lien: ""
             },
             {
@@ -2697,7 +2654,7 @@ document.addEventListener('DOMContentLoaded', function ()
             },
             {
                 value: 7,
-                text: "Accéder à nos contact",
+                text: "Accéder à nos contacts",
                 lien: "https://www.faire-ess.fr/fr/contact"
             }
         ];
@@ -2907,7 +2864,20 @@ document.addEventListener('DOMContentLoaded', function ()
         }
 
 
-        
+        /**
+         * Initialise le début de l’interaction sur le site et gère la sélection de thématique.
+         * 
+         * Cette fonction affiche un message d’introduction invitant l’utilisateur à choisir une
+         * thématique, remplit la liste déroulante correspondante, puis affiche cette liste.
+         * Elle enregistre l’étape actuelle dans le `sessionStorage`.
+         * 
+         * Un écouteur est ajouté au bouton `validateBtnSite` pour traiter la sélection de
+         * l’utilisateur : si une thématique est choisie, elle est affichée dans la conversation
+         * et la fonction `handleStart` est appelée avec la valeur correspondante.
+         * 
+         * @function start
+         * @returns {void} Cette fonction ne retourne rien.
+         */
         function start()
         {
             setTimeout(() =>
@@ -2935,7 +2905,24 @@ document.addEventListener('DOMContentLoaded', function ()
         }
 
 
-        
+        /**
+         * Redirige l’utilisateur vers la fonction correspondant à la thématique choisie.
+         * 
+         * Cette fonction reçoit en paramètre une valeur numérique représentant une thématique.
+         * Selon cette valeur (de 1 à 7), elle appelle la fonction appropriée pour lancer
+         * le contenu correspondant :
+         *   - 1 : `decouvert()`
+         *   - 2 : `inclusif()`
+         *   - 3 : `international()`
+         *   - 4 : `formations()`
+         *   - 5 : `recherche()`
+         *   - 6 : `resources()`
+         *   - 7 : `contact()`
+         * 
+         * @function handleStart
+         * @param {number} value - La valeur numérique correspondant à la thématique choisie.
+         * @returns {void} Cette fonction ne retourne rien.
+         */
         function handleStart(value)
         {
             switch (value)
@@ -2971,7 +2958,24 @@ document.addEventListener('DOMContentLoaded', function ()
         }
 
 
-        
+        /**
+         * Lance l’étape de découverte de l’identité de l’établissement.
+         * 
+         * Cette fonction prépare la sélection d’une sous-thématique liée à l’identité :
+         *   - Remplit la liste déroulante avec les options d’identité (`'identité'`).
+         *   - Affiche la zone de sélection.
+         *   - Enregistre l’étape actuelle (`'decouvert'`) dans le `sessionStorage`.
+         *   - Affiche un message utilisateur indiquant la section en cours.
+         *   - Affiche ensuite un message du bot pour guider l’utilisateur.
+         * 
+         * Un écouteur est ajouté au bouton `validateBtnSite` :
+         *   - Récupère la valeur sélectionnée dans la liste.
+         *   - Affiche le texte correspondant dans la conversation utilisateur.
+         *   - Appelle `decouvertFinish()` avec la thématique sélectionnée.
+         * 
+         * @function decouvert
+         * @returns {void} Cette fonction ne retourne rien.
+         */
         function decouvert()
         {
             remplirListOption('identité');
@@ -2981,7 +2985,7 @@ document.addEventListener('DOMContentLoaded', function ()
 
             setTimeout(() =>
             {
-                showMessageSite(messageInnerSite, "Découvrir notre identité (nous connaitre)", 'user');
+                showMessageSite(messageInnerSite, "Découvrir notre identité (nous connaître)", 'user');
             }, 250);
             setTimeout(() =>
             {
@@ -3002,7 +3006,20 @@ document.addEventListener('DOMContentLoaded', function ()
         }
 
 
-        
+        /**
+         * Finalise l’étape de découverte en affichant la page liée à l’identité sélectionnée.
+         * 
+         * Cette fonction :
+         *   - Affiche la zone de fin (`'finish'`).
+         *   - Enregistre l’étape courante (`'decouvertFinish'`) et l'identité choisie dans le `sessionStorage`.
+         *   - Affiche un message du bot pour introduire la page.
+         *   - Affiche ensuite la page web correspondant à la thématique choisie via `showWebPage`.
+         *   - Termine le processus en appelant `finishSite`.
+         * 
+         * @function decouvertFinish
+         * @param {Object} selectedIdentite - L’objet représentant l’identité sélectionnée (contenant au moins `value`, `text`, et `lien`).
+         * @returns {void} Cette fonction ne retourne rien.
+         */
         function decouvertFinish(selectedIdentite)
         {
             afficherZone('finish');
@@ -3024,7 +3041,22 @@ document.addEventListener('DOMContentLoaded', function ()
         }
 
 
-        
+        /**
+         * Démarre l’étape de sélection des projets inclusifs.
+         * 
+         * Cette fonction :
+         *  - Remplit la liste déroulante avec les options liées aux projets inclusifs.
+         *  - Affiche la zone de sélection.
+         *  - Enregistre l’étape courante ('inclusif') dans le `sessionStorage`.
+         *  - Affiche un message du bot pour guider l’utilisateur dans son choix.
+         *  - Ajoute un écouteur au bouton de validation pour traiter la sélection :
+         *      - Récupère la thématique sélectionnée.
+         *      - Affiche la thématique choisie dans la conversation.
+         *      - Appelle la fonction `inclusifFinish` avec l’élément sélectionné.
+         * 
+         * @function inclusif
+         * @returns {void} Cette fonction ne retourne rien.
+         */
         function inclusif()
         {
             remplirListOption('inclusif');
@@ -3052,7 +3084,20 @@ document.addEventListener('DOMContentLoaded', function ()
         }
 
 
-        
+        /**
+         * Termine l’étape des projets inclusifs en affichant la page sélectionnée.
+         * 
+         * Cette fonction :
+         *  - Affiche la zone de fin (`'finish'`).
+         *  - Enregistre l’étape courante (`'inclusifFinish'`) et la sélection de l’utilisateur dans le `sessionStorage`.
+         *  - Affiche un message du bot pour introduire la page web.
+         *  - Affiche la page web correspondant à la thématique sélectionnée via `showWebPage`.
+         *  - Appelle `finishSite` pour finaliser le processus.
+         * 
+         * @function inclusifFinish
+         * @param {Object} selectedInclusif - L’objet représentant la thématique inclusive sélectionnée (avec `value`, `text`, `lien`).
+         * @returns {void} Cette fonction ne retourne rien.
+         */
         function inclusifFinish(selectedInclusif)
         {
             afficherZone('finish');
@@ -3074,7 +3119,22 @@ document.addEventListener('DOMContentLoaded', function ()
         }
 
         
-        
+        /**
+         * Démarre l’étape de sélection des établissements et leur ouverture internationale.
+         * 
+         * Cette fonction :
+         *  - Remplit la liste déroulante avec les options d’établissements.
+         *  - Affiche la zone de sélection.
+         *  - Enregistre l’étape actuelle ('international') dans le `sessionStorage`.
+         *  - Affiche un message du bot pour guider l’utilisateur dans son choix.
+         *  - Ajoute un écouteur au bouton de validation pour gérer la sélection :
+         *      - Récupère la valeur choisie.
+         *      - Affiche la thématique sélectionnée dans la conversation.
+         *      - Appelle la fonction `internationalFinish` avec la sélection.
+         * 
+         * @function international
+         * @returns {void} Cette fonction ne retourne rien.
+         */
         function international()
         {
             remplirListOption('etablissement');
@@ -3084,7 +3144,7 @@ document.addEventListener('DOMContentLoaded', function ()
 
             setTimeout(() =>
             {
-                showMessageSite(messageInnerSite, "Explorez nos établissements et leur ouverture à l’international en cliquant sur 'Choisir une thématique...', puis validez.", 'bot');
+                showMessageSite(messageInnerSite, "Explorez nos établissements et leur ouverture à l'international en cliquant sur 'Choisir une thématique...', puis validez.", 'bot');
             }, 250);
 
             validateBtnSite.addEventListener('click', handleInternationalSubmit, { once: true });
@@ -3102,7 +3162,20 @@ document.addEventListener('DOMContentLoaded', function ()
         }
 
 
-        
+        /**
+         * Finalise l’étape des établissements internationaux en affichant la page sélectionnée.
+         * 
+         * Cette fonction :
+         *  - Affiche la zone de fin (`'finish'`).
+         *  - Enregistre l’étape courante (`'internationalFinish'`) et la sélection dans le `sessionStorage`.
+         *  - Affiche un message du bot pour introduire la page.
+         *  - Affiche la page web correspondant à la sélection via `showWebPage`.
+         *  - Appelle `finishSite` pour conclure le processus.
+         * 
+         * @function internationalFinish
+         * @param {Object} selectedInternational - L’objet représentant l’établissement sélectionné (avec `value`, `text`, `lien`).
+         * @returns {void} Cette fonction ne retourne rien.
+         */
         function internationalFinish(selectedInternational)
         {
             afficherZone('finish');
@@ -3124,7 +3197,22 @@ document.addEventListener('DOMContentLoaded', function ()
         }
 
 
-        
+        /**
+         * Lance l’étape de sélection des types de formations proposées.
+         * 
+         * Cette fonction :
+         *  - Remplit la liste déroulante avec les options de formations.
+         *  - Affiche la zone de sélection.
+         *  - Enregistre l’étape actuelle ('formations') dans le `sessionStorage`.
+         *  - Affiche un message du bot invitant l’utilisateur à choisir une formation.
+         *  - Ajoute un écouteur sur le bouton de validation pour gérer la sélection :
+         *      - Récupère la valeur choisie.
+         *      - Affiche la formation sélectionnée dans la conversation.
+         *      - Appelle la fonction `formationFinish` avec la sélection.
+         * 
+         * @function formations
+         * @returns {void} Cette fonction ne retourne rien.
+         */
         function formations()
         {
             remplirListOption('formations');
@@ -3134,7 +3222,7 @@ document.addEventListener('DOMContentLoaded', function ()
 
             setTimeout(() =>
             {
-                showMessageSite(messageInnerSite, "Découvrez nos types formations : cliquez sur 'Choisir une thématique…', puis validez", 'bot');
+                showMessageSite(messageInnerSite, "Découvrez nos types de formations : cliquez sur 'Choisir une thématique…', puis validez", 'bot');
             }, 250);
 
             validateBtnSite.addEventListener('click', handleFormationSubmit, { once: true });
@@ -3152,7 +3240,20 @@ document.addEventListener('DOMContentLoaded', function ()
         }
 
 
-        
+        /**
+         * Conclut l’étape de sélection des formations en affichant la page correspondante.
+         * 
+         * Cette fonction :
+         *  - Affiche la zone de fin (`'finish'`).
+         *  - Enregistre l’étape courante (`'formationFinish'`) et la formation choisie dans le `sessionStorage`.
+         *  - Affiche un message du bot pour introduire la page.
+         *  - Affiche la page web correspondant à la formation sélectionnée via `showWebPage`.
+         *  - Appelle `finishSite` pour terminer le processus.
+         * 
+         * @function formationFinish
+         * @param {Object} selectedFormation - L’objet représentant la formation choisie (avec `value`, `text`, `lien`).
+         * @returns {void} Cette fonction ne retourne rien.
+         */
         function formationFinish(selectedFormation)
         {
             afficherZone('finish');
@@ -3174,7 +3275,22 @@ document.addEventListener('DOMContentLoaded', function ()
         }
 
 
-        
+        /**
+         * Démarre l’étape d’accès aux ressources utiles.
+         * 
+         * Cette fonction :
+         *  - Remplit la liste déroulante avec les options de ressources.
+         *  - Affiche la zone de sélection.
+         *  - Enregistre l’étape actuelle ('ressources') dans le `sessionStorage`.
+         *  - Affiche un message du bot invitant l’utilisateur à choisir une ressource.
+         *  - Ajoute un écouteur sur le bouton de validation pour gérer la sélection :
+         *      - Récupère la valeur choisie.
+         *      - Affiche la ressource sélectionnée dans la conversation.
+         *      - Appelle la fonction `resourcesFinish` avec la sélection.
+         * 
+         * @function resources
+         * @returns {void} Cette fonction ne retourne rien.
+         */
         function resources()
         {
             remplirListOption('ressource');
@@ -3202,7 +3318,20 @@ document.addEventListener('DOMContentLoaded', function ()
         }
 
 
-        
+        /**
+         * Conclut l’étape d’accès aux ressources en affichant la page correspondante.
+         * 
+         * Cette fonction :
+         *  - Affiche la zone de fin (`'finish'`).
+         *  - Enregistre l’étape courante (`'ressourcesFinish'`) et la ressource sélectionnée dans le `sessionStorage`.
+         *  - Affiche un message du bot pour introduire la page.
+         *  - Affiche la page web correspondant à la ressource choisie via `showWebPage`.
+         *  - Appelle `finishSite` pour terminer le processus.
+         * 
+         * @function resourcesFinish
+         * @param {Object} selectedRessource - L’objet représentant la ressource choisie (avec `value`, `text`, `lien`).
+         * @returns {void} Cette fonction ne retourne rien.
+         */
         function resourcesFinish(selectedRessource)
         {
             afficherZone('finish');
@@ -3224,7 +3353,19 @@ document.addEventListener('DOMContentLoaded', function ()
         }
 
         
-        
+        /**
+         * Affiche directement la page de recherche sans étape de sélection.
+         * 
+         * Cette fonction :
+         *  - Affiche la zone de fin (`'finish'`).
+         *  - Enregistre l’étape courante (`'recherche'`) dans le `sessionStorage`.
+         *  - Affiche un message du bot pour introduire la page.
+         *  - Affiche la page web fixe de recherche via `showWebPage`.
+         *  - Appelle `finishSite` pour finaliser le processus.
+         * 
+         * @function recherche
+         * @returns {void} Cette fonction ne retourne rien.
+         */
         function recherche()
         {
             afficherZone('finish');
@@ -3245,7 +3386,19 @@ document.addEventListener('DOMContentLoaded', function ()
         }
 
         
-        
+        /**
+         * Affiche directement la page de contact sans étape de sélection.
+         * 
+         * Cette fonction :
+         *  - Affiche la zone de fin (`'finish'`).
+         *  - Enregistre l’étape courante (`'contact'`) dans le `sessionStorage`.
+         *  - Affiche un message du bot pour introduire la page.
+         *  - Affiche la page web fixe de contact via `showWebPage`.
+         *  - Appelle `finishSite` pour terminer le processus.
+         * 
+         * @function contact
+         * @returns {void} Cette fonction ne retourne rien.
+         */
         function contact()
         {
             afficherZone('finish');
@@ -3266,14 +3419,36 @@ document.addEventListener('DOMContentLoaded', function ()
         }
 
 
-        
+        /**
+         * Affiche un message de fin invitant l’utilisateur à réinitialiser le chat.
+         * 
+         * Cette fonction affiche un message du bot proposant à l’utilisateur de 
+         * cliquer sur "Réinitialiser le chat" pour recommencer la conversation depuis le début.
+         * 
+         * @function finishSite
+         * @returns {void} Cette fonction ne retourne rien.
+         */
         function finishSite()
         {
             showMessageSite(messageInnerSite, "Encore perdu ? clique sur Réinitialiser le chat pour repartir au début", 'bot');
         }
 
 
-        
+        /**
+         * Gère l’affichage des différentes zones de l’interface selon le type demandé.
+         * 
+         * Cette fonction :
+         *  - Cache toutes les zones (`buttonsZoneSite`, `selectZoneSite`, `finishZoneSite`) et le bouton de validation par défaut.
+         *  - Affiche uniquement la zone correspondant au `type` passé en paramètre :
+         *      - `'buttons'` : affiche la zone des boutons.
+         *      - `'list'` : affiche la zone de sélection déroulante et le bouton de validation.
+         *      - `'finish'` : affiche la zone de fin.
+         *  - Ne fait rien si le `type` ne correspond à aucun cas prévu.
+         * 
+         * @function afficherZone
+         * @param {string} type - Le type de zone à afficher (`'buttons'`, `'list'` ou `'finish'`).
+         * @returns {void} Cette fonction ne retourne rien.
+         */
         function afficherZone(type)
         {
             buttonsZoneSite.style.display =         'none';
@@ -3302,7 +3477,20 @@ document.addEventListener('DOMContentLoaded', function ()
         }
 
 
-        
+        /**
+         * Remplit la liste déroulante avec les options correspondant à une catégorie donnée.
+         * 
+         * Cette fonction :
+         *  - Vide toutes les options existantes dans le sélecteur `jobSelectSite`.
+         *  - Détermine la liste des options à afficher en fonction de la catégorie passée en paramètre.
+         *  - Ajoute une option par défaut désactivée et sélectionnée invitant à choisir une thématique.
+         *  - Si la catégorie est vide, la fonction s’arrête sans ajouter d’autres options.
+         *  - Sinon, ajoute toutes les options issues de la liste correspondant à la catégorie, avec leur valeur et texte.
+         * 
+         * @function remplirListOption
+         * @param {string} categorie - La catégorie d’options à afficher (ex : `'thematique'`, `'identité'`, `'inclusif'`, `'etablissement'`, `'formations'`, `'ressource'`).
+         * @returns {void} Cette fonction ne retourne rien.
+         */
         function remplirListOption(categorie)
         {
             for (let i = jobSelectSite.options.length; i >= 0; i--)
@@ -3343,7 +3531,23 @@ document.addEventListener('DOMContentLoaded', function ()
         }
 
 
-        
+        /**
+         * Affiche un message dans la zone de chat et gère l’historique des messages.
+         * 
+         * Cette fonction :
+         *  - Vérifie si le message a déjà été affiché pour éviter les doublons (surtout pour les messages du bot).
+         *  - Crée un élément `div` avec la classe adaptée selon l’expéditeur (`user` ou `bot`).
+         *  - Insère le message dans le conteneur fourni.
+         *  - Sauvegarde le message dans la session si `saveHistory` est vrai (par défaut).
+         *  - Fait défiler la zone de chat vers le bas pour afficher le nouveau message.
+         * 
+         * @function showMessageSite
+         * @param {HTMLElement} container - L’élément DOM dans lequel afficher le message.
+         * @param {string} message - Le texte du message à afficher.
+         * @param {string} sender - L’expéditeur du message, `'user'` ou `'bot'`.
+         * @param {boolean} [saveHistory=true] - Indique si le message doit être sauvegardé dans l’historique.
+         * @returns {void} Cette fonction ne retourne rien.
+         */
         function showMessageSite(container, message, sender, saveHistory = true)
         {
             const messageExists = chatHistorySite.some(chat => chat.content === message && chat.sender === sender);
@@ -3377,7 +3581,21 @@ document.addEventListener('DOMContentLoaded', function ()
         }
 
 
-        
+        /**
+         * Affiche un message dans la zone de chat sans vérifier les doublons ni sauvegarder l’historique.
+         * 
+         * Cette fonction :
+         *  - Crée un élément `div` avec la classe appropriée selon l’expéditeur (`user` ou `bot`).
+         *  - Ajoute le message au conteneur fourni.
+         *  - Fait défiler la zone de chat vers le bas pour afficher le nouveau message.
+         * 
+         * @function showMessageSiteHistorique
+         * @param {HTMLElement} container - L’élément DOM dans lequel afficher le message.
+         * @param {string} message - Le texte du message à afficher.
+         * @param {string} sender - L’expéditeur du message, `'user'` ou `'bot'`.
+         * @param {boolean} [saveHistory=true] - Paramètre présent mais non utilisé dans cette fonction.
+         * @returns {void} Cette fonction ne retourne rien.
+         */
         function showMessageSiteHistorique(container, message, sender, saveHistory = true)
         {
             const messageDiv = document.createElement('div');
@@ -3399,7 +3617,24 @@ document.addEventListener('DOMContentLoaded', function ()
         }
 
 
-        
+        /**
+         * Affiche un lien cliquable dans la zone de chat et redirige vers la page demandée.
+         * 
+         * Cette fonction :
+         *  - Vérifie si le lien est déjà affiché pour éviter les doublons ou si le lien est vide.
+         *  - Crée un élément `<a>` avec le texte et le lien fournis, avec une classe CSS spécifique.
+         *  - Ajoute ce lien au conteneur donné.
+         *  - Sauvegarde le lien dans l’historique si `saveHistory` est vrai (par défaut).
+         *  - Fait défiler la zone de chat vers le bas si elle est visible.
+         *  - Redirige immédiatement la fenêtre vers l’URL du lien.
+         * 
+         * @function showWebPage
+         * @param {HTMLElement} container - L’élément DOM dans lequel afficher le lien.
+         * @param {string} link - L’URL de la page à afficher.
+         * @param {string} text - Le texte à afficher pour le lien.
+         * @param {boolean} [saveHistory=true] - Indique si le lien doit être sauvegardé dans l’historique.
+         * @returns {void} Cette fonction ne retourne rien.
+         */
         function showWebPage(container, link, text, saveHistory = true)
         {
             const messageExists = chatHistorySite.some(chat => chat.content === text && chat.link === link && chat.sender === 'bot');
@@ -3432,7 +3667,22 @@ document.addEventListener('DOMContentLoaded', function ()
         }
 
 
-        
+        /**
+         * Affiche un lien cliquable dans la zone de chat sans redirection automatique ni gestion d’historique.
+         * 
+         * Cette fonction :
+         *  - Vérifie que le lien n’est pas vide.
+         *  - Crée un élément `<a>` avec le texte et le lien fournis, et lui applique une classe CSS spécifique.
+         *  - Ignore l’ajout si le texte du lien est vide.
+         *  - Ajoute le lien au conteneur donné.
+         *  - Fait défiler la zone de chat vers le bas si elle est visible.
+         * 
+         * @function showWebPageHistorique
+         * @param {HTMLElement} container - L’élément DOM dans lequel afficher le lien.
+         * @param {string} link - L’URL de la page à afficher.
+         * @param {string} text - Le texte à afficher pour le lien.
+         * @returns {void} Cette fonction ne retourne rien.
+         */
         function showWebPageHistorique(container, link, text)
         {
             if (!link)
@@ -3462,7 +3712,20 @@ document.addEventListener('DOMContentLoaded', function ()
         }
 
 
-        
+        /**
+         * Sauvegarde un message ou un lien dans l’historique de chat stocké dans la session.
+         * 
+         * Cette fonction :
+         *  - Ajoute un objet représentant le message (texte, lien, expéditeur, type) à la liste `chatHistorySite`.
+         *  - Met à jour la clé `'chatHistorySite'` dans `sessionStorage` avec la liste sérialisée.
+         * 
+         * @function saveMessageToSessionStorageSite
+         * @param {string} message - Le contenu textuel du message.
+         * @param {string|boolean} [lien=false] - L’URL associée au message, ou `false` s’il n’y en a pas.
+         * @param {string} sender - L’expéditeur du message (`'user'` ou `'bot'`).
+         * @param {string} type - Le type de contenu (`'message'`, `'link'`, etc.).
+         * @returns {void} Cette fonction ne retourne rien.
+         */
         function saveMessageToSessionStorageSite(message, lien = false, sender, type)
         {
             chatHistorySite.push(
@@ -3477,7 +3740,17 @@ document.addEventListener('DOMContentLoaded', function ()
         }
 
 
-        
+        /**
+         * Réinitialise l’interface pour revenir à la page d’accueil du site.
+         * 
+         * Cette fonction :
+         *  - Cache la page du site (`sitePage`).
+         *  - Affiche la page d’accueil (`initPage`).
+         *  - Vide le contenu des messages affichés dans la conversation (`messageInnerSite`).
+         * 
+         * @function retourAccueil
+         * @returns {void} Cette fonction ne retourne rien.
+         */
         backBtnSite.addEventListener('click', retourAccueil);
         function retourAccueil()
         {
@@ -3488,7 +3761,17 @@ document.addEventListener('DOMContentLoaded', function ()
         }
 
 
-        
+        /**
+         * Réinitialise le chat et efface toutes les données de session liées.
+         * 
+         * Cette fonction :
+         *  - Vide la zone d’affichage des messages.
+         *  - Supprime toutes les clés liées à l’état et à l’historique du chat dans `sessionStorage`.
+         *  - Appelle la fonction `retourAccueil` pour revenir à la page d’accueil.
+         * 
+         * @function resetChat
+         * @returns {void} Cette fonction ne retourne rien.
+         */
         resetBtnSite.addEventListener('click', resetChat);
         finishBtnSite.addEventListener('click', resetChat);
         function resetChat()
@@ -3508,6 +3791,27 @@ document.addEventListener('DOMContentLoaded', function ()
             retourAccueil();
         }
     }
+
+    
+    /**
+     * Lecture automatique des vidéos une fois qu'elles sont prêtes à être lues ("canplay").
+     * Pour chaque élément vidéo (initMascotte, popupMascotte, formationMascotte, siteMascotte),
+     * on écoute l'événement 'canplay' et on tente de lancer la lecture.
+     * Si la lecture est refusée (souvent pour des raisons de politique de navigateur),
+     * une erreur est loguée dans la console.
+     */
+    initMascotte.addEventListener('canplay', () => {
+        initMascotte.play().catch(e => console.log('Lecture initMascotte refusé'));
+    });
+    popupMascotte.addEventListener('canplay', () => {
+        popupMascotte.play().catch(e => console.log('Lecteur popupMascotte refusé'))
+    })
+    formationMascotte.addEventListener('canplay', () => {
+        formationMascotte.play().catch(e => console.log('Lecteur popupMascotte refusé'))
+    })
+    siteMascotte.addEventListener('canplay', () => {
+        siteMascotte.play().catch(e => console.log('Lecteur popupMascotte refusé'))
+    })
 });
             
 
