@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', function ()
                 initTitle.className =   'uk-title-chatbot';
                 initTitle.textContent = 'Bonjour !';
                 
-                const initMascotte = document.createElement('video');
+                const initMascotte =            document.createElement('video');
                     initMascotte.src =          'https://raw.githubusercontent.com/Alec34pi/IRTSMascotte/master/initM.mp4';
                     initMascotte.loop =         true;
                     initMascotte.muted =        true;
@@ -91,12 +91,12 @@ document.addEventListener('DOMContentLoaded', function ()
                     messageInnerFormation.id =    'uk-messageInnerFormation-formation-chatbot';
                     messageZoneFormation.appendChild(messageInnerFormation);
                     
-                const formationMascotte =   document.createElement('video');
-                    formationMascotte.src = 'https://raw.githubusercontent.com/Alec34pi/IRTSMascotte/master/tchatM.mp4';
-                    formationMascotte.loop = true;
-                    formationMascotte.muted = true;
-                    formationMascotte.playsInline = true;
-                    formationMascotte.id =    'uk-formationMascotte-formation-chatbot';
+                const formationMascotte =               document.createElement('video');
+                    formationMascotte.src =             'https://raw.githubusercontent.com/Alec34pi/IRTSMascotte/master/tchatM.mp4';
+                    formationMascotte.loop =            true;
+                    formationMascotte.muted =           true;
+                    formationMascotte.playsInline =     true;
+                    formationMascotte.id =              'uk-formationMascotte-formation-chatbot';
                 
                 const texteZoneFormation = document.createElement('div');
                 texteZoneFormation.id =    'uk-formationTexteZone-formation-chatbot';
@@ -165,8 +165,7 @@ document.addEventListener('DOMContentLoaded', function ()
                 const validateBtnFormation1 =     document.createElement('button');
                 validateBtnFormation1.id =        'uk-formationValidateBtn1-formation-chatbot';
                 validateBtnFormation1.title =     'valider';
-                validateBtnFormation1.innerHTML = `
-                    <svg width="20" height="20" fill="black" viewBox="0 0 16 16"> <path d="M13.485 1.929a.75.75 0 0 1 1.06 1.06L6.06 11.475a.75.75 0 0 1-1.06 0L1.455 7.93a.75.75 0 0 1 1.06-1.06L5.5 9.854l7.985-7.925z"/> </svg>`;
+                validateBtnFormation1.innerHTML = `<svg width="20" height="20" fill="black" viewBox="0 0 16 16"> <path d="M13.485 1.929a.75.75 0 0 1 1.06 1.06L6.06 11.475a.75.75 0 0 1-1.06 0L1.455 7.93a.75.75 0 0 1 1.06-1.06L5.5 9.854l7.985-7.925z"/> </svg>`;
 
                 const validateBtnFormation2 =     document.createElement('button');
                 validateBtnFormation2.id =        'uk-formationValidateBtn2-formation-chatbot';
@@ -203,12 +202,12 @@ document.addEventListener('DOMContentLoaded', function ()
                     messageInnerSite.id =    'uk-messageInnerSite-Site-chatbot';
                     messageZoneSite.appendChild(messageInnerSite);
                     
-                const siteMascotte = document.createElement('video');
-                    siteMascotte.src = 'https://raw.githubusercontent.com/Alec34pi/IRTSMascotte/master/tchatM.mp4';
-                    siteMascotte.loop = true;
-                    siteMascotte.muted = true;
-                    siteMascotte.playsInline = true;
-                    siteMascotte.id =    'uk-siteMascotte-chatbot';
+                const siteMascotte =            document.createElement('video');
+                    siteMascotte.src =          'https://raw.githubusercontent.com/Alec34pi/IRTSMascotte/master/tchatM.mp4';
+                    siteMascotte.loop =         true;
+                    siteMascotte.muted =        true;
+                    siteMascotte.playsInline =  true;
+                    siteMascotte.id =           'uk-siteMascotte-chatbot';
 
                 const buttonsZoneSite = document.createElement('div');
                 buttonsZoneSite.id =    'uk-SiteButtonsZone-Site-chatbot';
@@ -3813,7 +3812,8 @@ document.addEventListener('DOMContentLoaded', function ()
         siteMascotte.play().catch(e => console.log('Lecteur popupMascotte refusé'))
     })
 });
-            
+   
+
 
 
 
