@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', function ()
             
                 const initTitle =       document.createElement('div');
                 initTitle.className =   'uk-title-chatbot';
-                initTitle.textContent = 'Bonjour !';
+                initTitle.textContent = 'Bonjour';
                 
                 const initMascotte =            document.createElement('video');
                     initMascotte.src =          'https://raw.githubusercontent.com/Alec34pi/IRTSMascotte/master/initM.mp4';
@@ -1381,12 +1381,12 @@ document.addEventListener('DOMContentLoaded', function ()
 
             setTimeout(() =>
             {
-                showMessageFormation(messageInnerFormation, "👋 Bonjour et bienvenue !", 'bot');
+                showMessageFormation(messageInnerFormation, "👋 Bonjour et bienvenue", 'bot');
             }, 100);
 
             setTimeout(() =>
             {
-                showMessageFormation(messageInnerFormation, "Je suis là pour t'aider à trouver la formation dans le travail social qui te correspond. Prêt(e) à commencer ?", 'bot');
+                showMessageFormation(messageInnerFormation, "Je suis là pour vous aider à trouver la formation dans le travail social qui vous correspond. Prêt(e) à commencer ?", 'bot');
             }, 200);
 
             setTimeout(() =>
@@ -1451,7 +1451,7 @@ document.addEventListener('DOMContentLoaded', function ()
             
             setTimeout(() =>
             {
-                showMessageFormation(messageInnerFormation, `${userName}, As-tu déjà une expérience dans le travail social ?`, 'bot');
+                showMessageFormation(messageInnerFormation, `${userName}, Avez-vous déjà une expérience dans le travail social ?`, 'bot');
             }, 250);
 
             btnOuiFormation.onclick = () =>
@@ -1516,7 +1516,7 @@ document.addEventListener('DOMContentLoaded', function ()
 
             setTimeout(() =>
             {
-                showMessageFormation(messageInnerFormation, "D'accord, sais-tu vers quel métier tu t'orientes ?", 'bot');
+                showMessageFormation(messageInnerFormation, "D'accord, savez-vous vers quel métier vous orienter ?", 'bot');
             }, 250);
 
             btnOuiFormation.onclick = () =>
@@ -1586,7 +1586,7 @@ document.addEventListener('DOMContentLoaded', function ()
             }, 250);
             setTimeout(() =>
             {
-                showMessageFormation(messageInnerFormation, "Clique sur 'Choisis un métier...' puis valide", 'bot');
+                showMessageFormation(messageInnerFormation, "Cliquez sur 'Choisis un métier...' puis validez", 'bot');
             }, 300);
 
             validateBtnFormation1.addEventListener('click', handleFormationSubmit);
@@ -1627,7 +1627,7 @@ document.addEventListener('DOMContentLoaded', function ()
 
             setTimeout(() =>
             {
-                showMessageFormation(messageInnerFormation, `Veux-tu consulter la fiche métier de ${job} sur notre site ?`, 'bot');
+                showMessageFormation(messageInnerFormation, `Voulez-vous consulter la fiche métier de ${job} sur notre site ?`, 'bot');
             }, 250);
 
             btnOuiFormation.onclick = () =>
@@ -1691,7 +1691,7 @@ document.addEventListener('DOMContentLoaded', function ()
 
             setTimeout(() =>
             {
-                showMessageFormation(messageInnerFormation, "Veux-tu découvrir d'autres métiers qui pourraient aussi te correspondre ?", 'bot');
+                showMessageFormation(messageInnerFormation, "Voulez-vous découvrir d'autres métiers qui pourraient aussi vous correspondre ?", 'bot');
             }, 250);
 
             btnOuiFormation.onclick = () =>
@@ -1730,7 +1730,7 @@ document.addEventListener('DOMContentLoaded', function ()
 
             setTimeout(() =>
             {
-                showMessageFormation(messageInnerFormation, "Veux-tu que l'on essaie de trouver le métier de l'intervention sociale qui te correspond ?", 'bot');
+                showMessageFormation(messageInnerFormation, "Voulez-vous que l'on essaie de trouver le métier de l'intervention sociale qui vous correspond ?", 'bot');
             }, 250);
 
             btnOuiFormation.onclick = () =>
@@ -1769,7 +1769,7 @@ document.addEventListener('DOMContentLoaded', function ()
 
             setTimeout(() =>
             {
-                showMessageFormation(messageInnerFormation, "Merci pour ton temps !", 'bot');
+                showMessageFormation(messageInnerFormation, "On continue la visite ? cliquez sur Réinitialiser le chat pour repartir au début", 'bot');
             }, 300);
         }
 
@@ -1791,7 +1791,7 @@ document.addEventListener('DOMContentLoaded', function ()
 
             setTimeout(() =>
             {
-                showMessageFormation(messageInnerFormation, "Tu peux retourner à la liste des formations qui te correspondent ou revoir tes compétences si besoin", 'bot');
+                showMessageFormation(messageInnerFormation, "Vous pouvez retourner à la liste des formations qui vous correspondent ou revoir vos compétences si besoin", 'bot');
             }, 150);
         }
 
@@ -1827,7 +1827,7 @@ document.addEventListener('DOMContentLoaded', function ()
 
             setTimeout(() =>
             {
-                showMessageFormation(messageInnerFormation, "Je vais te poser des questions et tu me diras si tu penses posséder cette faculté ou pas.", 'bot');
+                showMessageFormation(messageInnerFormation, "Je vais vous poser des questions et vous me direz si vous pensez posséder cette faculté ou pas.", 'bot');
             }, 250);
 
             const SoftSkillsData =
@@ -1944,7 +1944,7 @@ document.addEventListener('DOMContentLoaded', function ()
                 remplirListeNiveau();
                 afficherZone('list1');
 
-                showMessageFormation(messageInnerFormation, "Quel niveau d'étude possèdes-tu ?", 'bot');
+                showMessageFormation(messageInnerFormation, "Quel niveau d'étude possèdez-vous ?", 'bot');
 
                 validateBtnFormation1.addEventListener('click', handleNiveauSubmit);
                 function handleNiveauSubmit()
@@ -2047,11 +2047,11 @@ document.addEventListener('DOMContentLoaded', function ()
 
             setTimeout(() =>
             {
-                showMessageFormation(messageInnerFormation, "Voici les formations qui te correspondent le mieux selon tes réponses", 'bot');
+                showMessageFormation(messageInnerFormation, "Les formations correspondantes sont visibles en cliquant sur 'Choisis un métier…'", 'bot');
             }, 150);
             setTimeout(() =>
             {
-                showMessageFormation(messageInnerFormation, "Quelle formation souhaites-tu voir ?", 'bot');
+                showMessageFormation(messageInnerFormation, "Choisissez la formation qui vous intéresse et validez.", 'bot');
             }, 250);
 
             validateBtnFormation2.addEventListener('click', handleMetierCorrespondantChoice);
@@ -2258,7 +2258,7 @@ document.addEventListener('DOMContentLoaded', function ()
             fetch(url)
                 .then(response =>
                 {
-                    if (!response.ok) throw new Error("Erreur de chargement, vérifie ta connexion internet");
+                    if (!response.ok) throw new Error("Erreur de chargement, vérifiez votre connexion internet");
                     return response.json();
                 })
                 .then(data =>
@@ -2370,7 +2370,7 @@ document.addEventListener('DOMContentLoaded', function ()
             defaultOption.value =       "";
             defaultOption.disabled =    true;
             defaultOption.selected =    true;
-            defaultOption.textContent = "Choisis un niveau...";
+            defaultOption.textContent = "Choisissez un niveau...";
             jobSelectFormation.appendChild(defaultOption);
 
             niveau.forEach(n => {
@@ -2663,7 +2663,7 @@ document.addEventListener('DOMContentLoaded', function ()
             },
             {
                 value: 7,
-                text: "Accéder à nos contacts",
+                text: "Accéder à nos contacts généraux de nos établissement",
                 lien: "https://www.faire-ess.fr/fr/contact"
             }
         ];
@@ -2773,7 +2773,7 @@ document.addEventListener('DOMContentLoaded', function ()
         [
             {
                 value: 1,
-                text: "ABS Faire",
+                text: "ABC Faire",
                 lien: "https://www.faire-ess.fr/fr/ressources-recherche/abcfaire"
             },
             {
@@ -2862,12 +2862,12 @@ document.addEventListener('DOMContentLoaded', function ()
 
             setTimeout(() =>
             {
-                showMessageSite(messageInnerSite, "👋 Bonjour et bienvenue !", 'bot');
+                showMessageSite(messageInnerSite, "👋 Bonjour et bienvenue", 'bot');
             }, 100);
 
             setTimeout(() =>
             {
-                showMessageSite(messageInnerSite, "Je suis là pour t'aider à t'orienter sur le site. Prêt(e) à commencer ?", 'bot');
+                showMessageSite(messageInnerSite, "Je suis là pour vous aider à vous orienter sur le site. Prêt(e) à commencer ?", 'bot');
             }, 200);
             start();
         }
@@ -3415,6 +3415,7 @@ document.addEventListener('DOMContentLoaded', function ()
 
             setTimeout(() =>
             {
+                showMessageSite(messageInnerSite, "vous retrouverez sur d'autres pages des contacts plus spécifiques en fonction de vos besoins", 'bot');
                 showMessageSite(messageInnerSite, "Voici la page demandée :", 'bot');
             }, 250);
             setTimeout(() =>
@@ -3439,7 +3440,7 @@ document.addEventListener('DOMContentLoaded', function ()
          */
         function finishSite()
         {
-            showMessageSite(messageInnerSite, "Encore perdu ? clique sur Réinitialiser le chat pour repartir au début", 'bot');
+            showMessageSite(messageInnerSite, "On continue la visite ? cliquez sur Réinitialiser le chat pour repartir au début", 'bot');
         }
 
 
