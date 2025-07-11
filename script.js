@@ -93,6 +93,7 @@ document.addEventListener('DOMContentLoaded', function ()
                     formationMascotte.src =             'https://raw.githubusercontent.com/Alec34pi/IRTSMascotte/master/tchatM.mp4';
                     formationMascotte.loop =            true;
                     formationMascotte.muted =           true;
+                    formationMascotte.autoplay =        true;
                     formationMascotte.playsInline =     true;
                     formationMascotte.id =              'uk-formationMascotte-formation-chatbot';
                 
@@ -204,6 +205,7 @@ document.addEventListener('DOMContentLoaded', function ()
                     siteMascotte.src =          'https://raw.githubusercontent.com/Alec34pi/IRTSMascotte/master/tchatM.mp4';
                     siteMascotte.loop =         true;
                     siteMascotte.muted =        true;
+                    siteMascotte.autoplay =     true;
                     siteMascotte.playsInline =  true;
                     siteMascotte.id =           'uk-siteMascotte-chatbot';
 
