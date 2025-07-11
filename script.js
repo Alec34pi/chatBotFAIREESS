@@ -52,13 +52,11 @@ document.addEventListener('DOMContentLoaded', function ()
                     const siteBtn =       document.createElement('button');
                     siteBtn.className =   'uk-initBtn-chatbot';
                     siteBtn.id =          'initSiteBouton-chatbot';
-                    siteBtn.title =       "M'orienter sur le site";
                     siteBtn.textContent = "M'orienter sur le site";
                     
                     const formationBtn =       document.createElement('button');
                     formationBtn.className =   'uk-initBtn-chatbot';
                     formationBtn.id =          'initFormationBouton-chatbot';
-                    formationBtn.title =       'Trouver ma formation';
                     formationBtn.textContent = 'Trouver ma formation';
 
             const formationPage = document.createElement('div');
