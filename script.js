@@ -1334,33 +1334,43 @@ document.addEventListener('DOMContentLoaded', function ()
                 case 'start' :
                     askName();
                     break;
+                    
                 case 'askExperience':
                     askExperience();
                     break;
+
                 case 'askJobOrientation':
                     askJobOrientation();
                     break;
+
                 case 'showJobSelection':
                     showJobSelection();
                     break;
+
                 case 'proposeDiscovery':
                     proposeDiscovery();
                     break;
+
                 case 'askDiscovery':
                     askDiscovery();
                     break;
+
                 case 'end':
                     endChat();
                     break;
+
                 case 'softSkillsQuestion':
                     softSkillsQuestion(currentStepSoftSkills);
                     break;
+
                 case 'niveauQuestion':
                     askNiveau();
                     break;
+
                 case 'AffichageFormationsCorrespondant':
                     softSkillsAffichage();
                     break;
+
                 case 'endFormation':
                     endChatFormation();
                     break;
@@ -3506,8 +3516,8 @@ document.addEventListener('DOMContentLoaded', function ()
                 'formations': listeSiteFormations,
                 'ressource': listRessource
             };
-            const data = liste[categorie];
-            const option = document.createElement('option');
+            const data =            liste[categorie];
+            const option =          document.createElement('option');
 
             option.value =          0;
             option.textContent =    "Choisir une thématique...";
@@ -3608,11 +3618,11 @@ document.addEventListener('DOMContentLoaded', function ()
             {
                 messageDiv.classList.add('uk-bot-message-site-chatbot');
             }
-            messageDiv.textContent = message;
+            messageDiv.textContent =        message;
             container.appendChild(messageDiv);
 
-            movement = container.scrollHeight
-            messageInnerSite.scrollTop = movement;
+            movement =                      container.scrollHeight
+            messageInnerSite.scrollTop =    movement;
         }
 
 
