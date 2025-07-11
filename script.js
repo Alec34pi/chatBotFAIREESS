@@ -30,6 +30,10 @@ document.addEventListener('DOMContentLoaded', function ()
                 closeBtn.id =          'closeBtn-chatbot';
                 closeBtn.title =       'Fermer';
                 closeBtn.textContent = 'X';
+
+            const warning =     document.createElement('div');
+            warning.className = 'uk-warning-chatbot';
+            warning.textContent = 'En cas de problème, fermez puis rouvrez votre navigateur.';
         
             const initPage = document.createElement('div');
             initPage.id =    'uk-initPage-chatbot';
@@ -311,6 +315,7 @@ document.addEventListener('DOMContentLoaded', function ()
     isolatedWrapper.appendChild(formationPage);
     isolatedWrapper.appendChild(initPage);
     isolatedWrapper.appendChild(closeBtnBorder);
+    isolatedWrapper.appendChild(warning);
 
     mainContent.appendChild(isolatedWrapper);
 
@@ -444,6 +449,16 @@ document.addEventListener('DOMContentLoaded', function ()
                         background-color: #d25a5a;
                         opacity: 1;
                     }
+            .uk-warning-chatbot
+            {
+                position: absolute;
+                right: 115px;
+                bottom: 1px;
+                z-index: 1;
+                opacity: 0.75;
+                color: #c04848;
+                font-size: 12px
+            }
             .uk-title-chatbot
             {
                 margin-top: 50px;
