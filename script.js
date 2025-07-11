@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function ()
 
         const popupState = document.createElement('div');
         popupState.id =    'uk-popupState-chatbot';
-        
+
             const popupMascotte =       document.createElement('video');
             popupMascotte.src =         'https://raw.githubusercontent.com/Alec34pi/IRTSMascotte/master/popupM.mp4';
             popupMascotte.loop =        true;
@@ -17,14 +17,14 @@ document.addEventListener('DOMContentLoaded', function ()
 
         const mainContent = document.createElement('div');
         mainContent.id =    'uk-mainContent-chatbot';
-        
+
         const mainContentBackground = document.createElement('div');
         mainContentBackground.id =    'uk-mainContent-chatbot-background';
 
             const closeBtnBorder =     document.createElement('div');
             closeBtnBorder.className = 'uk-closeBtnBorder-chatbot';
             closeBtnBorder.id =        'uk-closeBtnBorder-chatbot';
-            
+
                 const closeBtn =       document.createElement('button');
                 closeBtn.className =   'uk-close-btn-chatbot';
                 closeBtn.id =          'closeBtn-chatbot';
@@ -34,14 +34,14 @@ document.addEventListener('DOMContentLoaded', function ()
             const warning =     document.createElement('div');
             warning.className = 'uk-warning-chatbot';
             warning.textContent = 'En cas de problème, fermez puis rouvrez votre navigateur.';
-        
+
             const initPage = document.createElement('div');
             initPage.id =    'uk-initPage-chatbot';
-            
+
                 const initTitle =       document.createElement('div');
                 initTitle.className =   'uk-title-chatbot';
                 initTitle.textContent = 'Bonjour';
-                
+
                 const initMascotte =            document.createElement('video');
                     initMascotte.src =          'https://raw.githubusercontent.com/Alec34pi/IRTSMascotte/master/initM.mp4';
                     initMascotte.loop =         true;
@@ -49,15 +49,15 @@ document.addEventListener('DOMContentLoaded', function ()
                     initMascotte.autoplay =     true;
                     initMascotte.playsInline =  true;
                     initMascotte.id =           'uk-initMascotte-chatbot';
-                
+
                 const initButtons = document.createElement('div');
                 initButtons.id =    'uk-initButtons-chatbot';
-                
+
                     const siteBtn =       document.createElement('button');
                     siteBtn.className =   'uk-initBtn-chatbot';
                     siteBtn.id =          'initSiteBouton-chatbot';
                     siteBtn.textContent = "M'orienter sur le site";
-                    
+
                     const formationBtn =       document.createElement('button');
                     formationBtn.className =   'uk-initBtn-chatbot';
                     formationBtn.id =          'initFormationBouton-chatbot';
@@ -65,17 +65,17 @@ document.addEventListener('DOMContentLoaded', function ()
 
             const formationPage = document.createElement('div');
             formationPage.id =    'uk-Page-chatbot';
-            
+
                 const buttonsBorderFormation =     document.createElement('div');
                 buttonsBorderFormation.className = 'uk-buttonsBorder-formation-chatbot';
                 buttonsBorderFormation.id =        'uk-buttonsBorder-formation-chatbot';
-                
+
                     const backBtnFormation =       document.createElement('button');
                     backBtnFormation.className =   'uk-back-btn-formation-chatbot';
                     backBtnFormation.id =          'backBtn-formation-chatbot';
                     backBtnFormation.title =       'Retour';
                     backBtnFormation.textContent = '←';
-                    
+
                     const resetBtnFormation =       document.createElement('button');
                     resetBtnFormation.className =   'uk-reset-btn-formation-chatbot';
                     resetBtnFormation.id =          'resetBtn-formation-chatbot';
@@ -85,14 +85,14 @@ document.addEventListener('DOMContentLoaded', function ()
                 const formationTitle =       document.createElement('div');
                 formationTitle.className =   'uk-title-chatbot';
                 formationTitle.textContent = 'Trouver ma formation';
-                
+
                 const messageZoneFormation = document.createElement('div');
                 messageZoneFormation.id =    'uk-formationMessageZone-formation-chatbot';
-                
+
                     const messageInnerFormation = document.createElement('div');
                     messageInnerFormation.id =    'uk-messageInnerFormation-formation-chatbot';
                     messageZoneFormation.appendChild(messageInnerFormation);
-                    
+
                 const formationMascotte =               document.createElement('video');
                     formationMascotte.src =             'https://raw.githubusercontent.com/Alec34pi/IRTSMascotte/master/tchatM.mp4';
                     formationMascotte.loop =            true;
@@ -100,10 +100,10 @@ document.addEventListener('DOMContentLoaded', function ()
                     formationMascotte.autoplay =        true;
                     formationMascotte.playsInline =     true;
                     formationMascotte.id =              'uk-formationMascotte-formation-chatbot';
-                
+
                 const texteZoneFormation = document.createElement('div');
                 texteZoneFormation.id =    'uk-formationTexteZone-formation-chatbot';
-                
+
                     const texteInputFormation =       document.createElement('input');
                     texteInputFormation.type =        'text';
                     texteInputFormation.id =          'uk-formationInputText-formation-chatbot';
@@ -112,23 +112,24 @@ document.addEventListener('DOMContentLoaded', function ()
 
                 const rangeZoneFormation = document.createElement('div');
                 rangeZoneFormation.id =    'uk-formationRangeZone-formation-chatbot';
-                
+
                     const rangeInputFormation = document.createElement('input');
                     rangeInputFormation.type =  'range';
                     rangeInputFormation.id =    'uk-formationInputRange-formation-chatbot';
                     rangeInputFormation.min =   '0';
                     rangeInputFormation.max =   '100';
-                    
+
                     const rangeValueFormation =       document.createElement('span');
                     rangeValueFormation.id =          'uk-formationRangeValue-formation-chatbot';
                     rangeValueFormation.textContent = '50%';
 
                 const buttonsZoneFormation = document.createElement('div');
                 buttonsZoneFormation.id =    'uk-formationButtonsZone-formation-chatbot';
-                
+
                     const btnOuiFormation =       document.createElement('button');
                     btnOuiFormation.id =          'uk-btnOui-formation-chatbot';
                     btnOuiFormation.textContent = 'Oui';
+
                     const btnNonFormation =       document.createElement('button');
                     btnNonFormation.id =          'uk-btnNon-formation-chatbot';
                     btnNonFormation.textContent = 'Non';
@@ -154,12 +155,12 @@ document.addEventListener('DOMContentLoaded', function ()
 
                 const choiceZoneFormation = document.createElement('div');
                 choiceZoneFormation.id =    'uk-formationsChoiceZone-formation-chatbot';
-                
+
                     const returnChoiceZoneFormation =        document.createElement('button');
                     returnChoiceZoneFormation.id =           'uk-formationResetChoiceZoneBtn-formation-chatbot';
                     returnChoiceZoneFormation.textContent =  'Retour aux formations conseillé';
                     returnChoiceZoneFormation.disabled =     true;
-                    
+
                     const returnCritere =        document.createElement('button');
                     returnCritere.id =           'uk-formationResetChatZoneBtn-formation-chatbot';
                     returnCritere.textContent =  'Retour aux choix des compétences';
@@ -177,17 +178,17 @@ document.addEventListener('DOMContentLoaded', function ()
 
             const sitePage = document.createElement('div');
             sitePage.id =    'uk-Page-chatbot';
-            
+
                 const buttonsBorderSite =     document.createElement('div');
                 buttonsBorderSite.className = 'uk-buttonsBorder-Site-chatbot';
                 buttonsBorderSite.id =        'uk-buttonsBorder-Site-chatbot';
-                
+
                     const backBtnSite =       document.createElement('button');
                     backBtnSite.className =   'uk-back-btn-Site-chatbot';
                     backBtnSite.id =          'backBtn-Site-chatbot';
                     backBtnSite.title =       'Retour';
                     backBtnSite.textContent = '←';
-                    
+
                     const resetBtnSite =       document.createElement('button');
                     resetBtnSite.className =   'uk-reset-btn-Site-chatbot';
                     resetBtnSite.id =          'resetBtn-Site-chatbot';
@@ -197,14 +198,14 @@ document.addEventListener('DOMContentLoaded', function ()
                 const SiteTitle =       document.createElement('div');
                 SiteTitle.className =   'uk-title-chatbot';
                 SiteTitle.textContent = 'Orientation sur le Site';
-                
+
                 const messageZoneSite = document.createElement('div');
                 messageZoneSite.id =    'uk-SiteMessageZone-Site-chatbot';
-                
+
                     const messageInnerSite = document.createElement('div');
                     messageInnerSite.id =    'uk-messageInnerSite-Site-chatbot';
                     messageZoneSite.appendChild(messageInnerSite);
-                    
+
                 const siteMascotte =            document.createElement('video');
                     siteMascotte.src =          'https://raw.githubusercontent.com/Alec34pi/IRTSMascotte/master/tchatM.mp4';
                     siteMascotte.loop =         true;
@@ -215,39 +216,39 @@ document.addEventListener('DOMContentLoaded', function ()
 
                 const buttonsZoneSite = document.createElement('div');
                 buttonsZoneSite.id =    'uk-SiteButtonsZone-Site-chatbot';
-                
+
                     const btnOuiSite =       document.createElement('button');
                     btnOuiSite.id =          'uk-btnOui-Site-chatbot';
                     btnOuiSite.textContent = 'Oui';
-                    
+
                     const btnNonSite =       document.createElement('button');
                     btnNonSite.id =          'uk-btnNon-Site-chatbot';
                     btnNonSite.textContent = 'Non';
-                    
+
                 const selectZoneSite = document.createElement('div');
                 selectZoneSite.id =    'uk-SiteSelectZone-Site-chatbot';
-                
+
                     const jobSelectSite = document.createElement('select');
                     jobSelectSite.id =    'uk-SiteJobSelect-Site-chatbot';
-                    
+
                         const defaultOptionSite =       document.createElement('option');
                         defaultOptionSite.value =       '';
                         defaultOptionSite.disabled =    true;
                         defaultOptionSite.selected =    true;
                         defaultOptionSite.textContent = 'Choisir un métier...';
-                        
+
                 const finishZoneSite = document.createElement('div');
                 finishZoneSite.id =    'uk-SitesFinishZone-Site-chatbot';
-                
+
                     const finishBtnSite =       document.createElement('button');
                     finishBtnSite.id =          'uk-SiteFinishBtn-Site-chatbot';
                     finishBtnSite.textContent = 'Réinitialiser le chat';
-                    
+
                 const validateBtnSite =     document.createElement('button');
                 validateBtnSite.id =        'uk-SiteValidateBtn-Site-chatbot';
                 validateBtnSite.title =     'valider';
                 validateBtnSite.innerHTML = `<svg width="20" height="20" fill="black" viewBox="0 0 16 16"> <path d="M13.485 1.929a.75.75 0 0 1 1.06 1.06L6.06 11.475a.75.75 0 0 1-1.06 0L1.455 7.93a.75.75 0 0 1 1.06-1.06L5.5 9.854l7.985-7.925z"/> </svg>`;
-         
+
 
     popupState.appendChild(popupMascotte);
 
@@ -1349,7 +1350,7 @@ document.addEventListener('DOMContentLoaded', function ()
                 case 'start' :
                     askName();
                     break;
-                    
+
                 case 'askExperience':
                     askExperience();
                     break;
@@ -1428,7 +1429,7 @@ document.addEventListener('DOMContentLoaded', function ()
             afficherZone('text');
 
             showMessageFormation(messageInnerFormation, "Quel est votre prénom ?", 'bot');
-        
+
             validateBtnFormation1.addEventListener('click', () =>
             {
                 const nameInput = texteInputFormation.value.trim();
@@ -1437,7 +1438,7 @@ document.addEventListener('DOMContentLoaded', function ()
                 {
                     userName = nameInput;
                     showMessageFormation(messageInnerFormation, userName, 'user');
-                    
+
                     texteInputFormation.value = "";
                     sessionStorage.setItem('userName', userName);
 
@@ -1566,13 +1567,13 @@ document.addEventListener('DOMContentLoaded', function ()
             if (response === true)
             {
                 showMessageFormation(messageInnerFormation, "Oui.", 'user');
-                
+
                 showJobSelection();
             }
             else
             {
                 showMessageFormation(messageInnerFormation, "Non.", 'user');
-                
+
                 proposeDiscovery();
             }
         }
@@ -1649,7 +1650,7 @@ document.addEventListener('DOMContentLoaded', function ()
             {
                 showMessageFormation(messageInnerFormation, "Oui.", 'user');
                 boolRespond = true;
-                
+
                 handleConsultJobSheetnResponse(boolRespond, jobLink);
             };
 
@@ -1657,7 +1658,7 @@ document.addEventListener('DOMContentLoaded', function ()
             {
                 showMessageFormation(messageInnerFormation, "Non.", 'user');
                 boolRespond = false;
-                
+
                 handleConsultJobSheetnResponse(boolRespond, null);
             };
         }
@@ -1679,7 +1680,7 @@ document.addEventListener('DOMContentLoaded', function ()
             if (response === true)
             {
                 showFicheMetier(messageInnerFormation, jobLink);
-                
+
                 endChat();
             }
             else
@@ -1712,7 +1713,7 @@ document.addEventListener('DOMContentLoaded', function ()
             btnOuiFormation.onclick = () =>
             {
                 showMessageFormation(messageInnerFormation, "Oui.", 'user');
-                
+
                 setTimeout(() =>
                 {
                     softSkillsQuestion(currentStepSoftSkills);
@@ -1722,7 +1723,7 @@ document.addEventListener('DOMContentLoaded', function ()
             btnNonFormation.onclick = () =>
             {
                 showMessageFormation(messageInnerFormation, "Non.", 'user');
-                
+
                 endChat();
             };
         }
@@ -1761,7 +1762,7 @@ document.addEventListener('DOMContentLoaded', function ()
             btnNonFormation.onclick = () =>
             {
                 showMessageFormation(messageInnerFormation, "Non.", 'user');
-                
+
                 endChat();
             }; 
         }
@@ -2006,11 +2007,11 @@ document.addEventListener('DOMContentLoaded', function ()
             const reponsesFinales =             JSON.parse(sessionStorage.getItem('reponseUserSoftSkills') || '[]');
             const donneesFormation =            window.listeFormationsSite;
             const userLevel =                   parseInt(sessionStorage.getItem('userNiveau'), 10);
-            
+
             const formationsFiltreesParNiveau = donneesFormation.filter(formation => {
                 return formation.niveau <= userLevel;
             });
-            
+
             const formationsAvecScore =         formationsFiltreesParNiveau.map(formation => {
                 let score = 0;
 
@@ -2078,7 +2079,7 @@ document.addEventListener('DOMContentLoaded', function ()
                 {
                     const selectedName =    window.listeFormationsSite.findIndex(formation => formation.nom === selectedValue);
                     showMessageFormation(messageInnerFormation, selectedValue, 'user');
-                    
+
                     const jobLink =         window.listeFormationsSite[selectedName].lien;
 
                     validateBtnFormation2.removeEventListener('click', handleMetierCorrespondantChoice);
@@ -2149,7 +2150,7 @@ document.addEventListener('DOMContentLoaded', function ()
         function saveMessageToSessionStorageFormation(message, sender, type = 'message')
         {
             let chatHistoryFormation = JSON.parse(sessionStorage.getItem('chatHistoryFormation')) || [];
-        
+
             if (sender === 'bot')
             {
                 const messageExists =   chatHistoryFormation.some(chat => chat.sender === 'bot' && chat.content === message);
@@ -2158,19 +2159,19 @@ document.addEventListener('DOMContentLoaded', function ()
                     return;
                 }
             }
-        
+
             if (chatHistoryFormation.length > 0 && chatHistoryFormation[chatHistoryFormation.length - 1].content === message && chatHistoryFormation[chatHistoryFormation.length - 1].sender === sender)
             {
                 chatHistoryFormation.pop();
             }
-        
+
             chatHistoryFormation.push(
             {
                 type: type,
                 content: message,
                 sender: sender
             });
-        
+
             sessionStorage.setItem('chatHistoryFormation', JSON.stringify(chatHistoryFormation));
         }
 
@@ -2590,7 +2591,7 @@ document.addEventListener('DOMContentLoaded', function ()
             softSkillsQuestion(currentStepSoftSkills);
         }
 
-        
+
         /**
          * Gère le retour à la liste des formations depuis une zone spécifique.
          * Efface les messages précédents, réinitialise l'historique de session,
@@ -2604,7 +2605,6 @@ document.addEventListener('DOMContentLoaded', function ()
         function returnChoiceFormation()
         {
             messageInnerFormation.innerHTML = '';
-            
             sessionStorage.removeItem('linkHistory');
 
             sessionStorage.removeItem('chatHistoryFormation');
@@ -2908,7 +2908,7 @@ document.addEventListener('DOMContentLoaded', function ()
             {
                 showMessageSite(messageInnerSite, "Choisissez une thématique en cliquant sur 'Choisir une thématique...'", 'bot');
             }, 250);
-            
+
             remplirListOption('thematique');
             afficherZone('list');
 
@@ -3142,7 +3142,7 @@ document.addEventListener('DOMContentLoaded', function ()
             }, 550);
         }
 
-        
+
         /**
          * Démarre l’étape de sélection des établissements et leur ouverture internationale.
          * 
@@ -3376,7 +3376,7 @@ document.addEventListener('DOMContentLoaded', function ()
             }, 550);
         }
 
-        
+
         /**
          * Affiche directement la page de recherche sans étape de sélection.
          * 
@@ -3409,7 +3409,7 @@ document.addEventListener('DOMContentLoaded', function ()
             }, 550);
         }
 
-        
+
         /**
          * Affiche directement la page de contact sans étape de sélection.
          * 
@@ -3481,7 +3481,7 @@ document.addEventListener('DOMContentLoaded', function ()
             finishZoneSite.style.display =          'none';
 
             validateBtnSite.style.display =         'none';
-            
+
             if (type === 'buttons')
             {
                 buttonsZoneSite.style.display =     'block';
@@ -3522,7 +3522,7 @@ document.addEventListener('DOMContentLoaded', function ()
             {
                 jobSelectSite.remove(i);
             }
-            
+
             const liste =
             {
                 'thematique': listThematiques,
@@ -3679,7 +3679,7 @@ document.addEventListener('DOMContentLoaded', function ()
             {
                 saveMessageToSessionStorageSite(text, link, 'bot', 'link');
             }
-            
+
             if (container.style.display === 'block')
             {
                 container.scrollTo(
@@ -3718,7 +3718,6 @@ document.addEventListener('DOMContentLoaded', function ()
             linkDiv.textContent =   text;
             linkDiv.href =          link;
             linkDiv.classList.add('uk-linkDiv-formation-chatbot');
-            
 
             if(linkDiv.innerHTML.trim() === '')
             { 
@@ -3760,7 +3759,7 @@ document.addEventListener('DOMContentLoaded', function ()
                 link: lien,
                 sender: sender
             });
-        
+
             sessionStorage.setItem('chatHistorySite', JSON.stringify(chatHistorySite));
         }
 
@@ -3817,7 +3816,7 @@ document.addEventListener('DOMContentLoaded', function ()
         }
     }
 
-    
+
     /**
      * Lecture automatique des vidéos une fois qu'elles sont prêtes à être lues ("canplay").
      * Pour chaque élément vidéo (initMascotte, popupMascotte, formationMascotte, siteMascotte),
