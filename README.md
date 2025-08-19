@@ -25,6 +25,12 @@ Le chatbot FAIRE ESS repose sur un script unique qui gère :
 - `index.html`  
   ➤ Permet de visualiser et tester le chatbot directement dans un navigateur
 
+- `infos.ods`  
+  ➤ Fichier source contenant les informations principales des formations  
+
+- `Chat bot 1.xlsx`  
+  ➤ Tableur structurant les soft skills et leurs correspondances avec les formations  
+
 ## 🔗 Dépendances
 
 Ce projet s'appuie sur deux autres dépôts :
@@ -35,32 +41,15 @@ Ce projet s'appuie sur deux autres dépôts :
 - [📁 `IRTSMascotte`](https://github.com/Alec34pi/IRTSMascotte) :  
   Contient les vidéos d'animation de la mascotte utilisée dans le chatbot
 
+## 📊 Sources des données
+
+Deux fichiers de base sont inclus dans ce dépôt et servent à générer les données du projet [dataFormations](https://github.com/Alec34pi/dataFormations) :
+
+- `infos.ods` : contient les informations principales des formations  
+- `Chat bot 1.xlsx` : tableur structurant les soft skills et leurs correspondances avec les formations
+
 ## 🚀 Lancer le chatbot en local
 
 1. Cloner le dépôt :
    ```bash
    git clone https://github.com/Alec34pi/chatBotFAIREESS.git
-   ```
-
-2. Ouvrir le fichier `index.html` dans un navigateur pour visualiser le chatbot.
-
-## 📁 Structure du dépôt
-
-```
-chatBotFAIREESS/
-│
-├── script.js           # Script principal du chatbot (logique + interface)
-├── index.html          # Fichier de test pour visualiser le chatbot
-└── README.md           # Documentation du projet
-```
-
-## 🤝 Contribuer
-
-Les améliorations sont les bienvenues ! Pour corriger un bug ou proposer une nouvelle fonctionnalité, merci de créer une *issue* ou une *pull request*.
-
-## 👀 Visualisation
-
-Pour voir un exemple fonctionnel du chatbot, vous pouvez consulter la version en ligne via ce lien :  
-[Visualiser le chatbot FAIRE ESS](https://htmlpreview.github.io/?https://raw.githubusercontent.com/Alec34pi/chatBotFAIREESS/master/index.html)
-
----
