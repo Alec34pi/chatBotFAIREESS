@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', function ()
 
             const warning =     document.createElement('div');
             warning.className = 'uk-warning-chatbot';
-            warning.textContent = 'En cas de problème, fermez puis rouvrez votre navigateur.';
+            warning.textContent = 'En cas de problème, relancez votre navigateur.';
 
             const initPage = document.createElement('div');
             initPage.id =    'uk-initPage-chatbot';
@@ -166,6 +166,13 @@ document.addEventListener('DOMContentLoaded', function ()
                     returnCritere.textContent =  'Retour aux choix des compétences';
                     returnCritere.disabled =     true;
 
+                const retourFormationZoneFormation = document.createElement('div');
+                retourFormationZoneFormation.id =    'uk-retourFormationZone-formation-chatbot';
+
+                    const retourFormationBtnFormation =       document.createElement('button');
+                    retourFormationBtnFormation.id =          'uk-retourFormationBtn-formation-chatbot';
+                    retourFormationBtnFormation.textContent = 'Retour aux métiers';
+
                 const validateBtnFormation1 =     document.createElement('button');
                 validateBtnFormation1.id =        'uk-formationValidateBtn1-formation-chatbot';
                 validateBtnFormation1.title =     'valider';
@@ -280,6 +287,8 @@ document.addEventListener('DOMContentLoaded', function ()
     choiceZoneFormation.appendChild(returnChoiceZoneFormation);
     choiceZoneFormation.appendChild(returnCritere);
 
+    retourFormationZoneFormation.appendChild(retourFormationBtnFormation);
+
     formationPage.appendChild(buttonsBorderFormation);
     formationPage.appendChild(formationTitle);
     formationPage.appendChild(messageZoneFormation);
@@ -289,6 +298,7 @@ document.addEventListener('DOMContentLoaded', function ()
     formationPage.appendChild(buttonsZoneFormation);
     formationPage.appendChild(selectZoneFormation);
     formationPage.appendChild(finishZoneFormation);
+    formationPage.appendChild(retourFormationZoneFormation);
     formationPage.appendChild(choiceZoneFormation);
     formationPage.appendChild(validateBtnFormation1);
     formationPage.appendChild(validateBtnFormation2);
@@ -343,8 +353,8 @@ document.addEventListener('DOMContentLoaded', function ()
         {
             all: initial;
             box-sizing: content-box;
-            width: 100px;
-            height: 100px;
+            width: 70px;
+            height: 70px;
             border-radius: 50%;
             position: fixed;
             bottom: 20px;
@@ -377,8 +387,8 @@ document.addEventListener('DOMContentLoaded', function ()
         }
             #uk-popupMascotte-chatbot
             {
-                width: 75px;
-                height: 75px;
+                width: 60px;
+                height: 60px;
                 position: absolute;
                 top: 50%;
                 left: 50%;
@@ -906,6 +916,46 @@ document.addEventListener('DOMContentLoaded', function ()
                         opacity: 1;
                     }
 
+            #uk-retourFormationZone-formation-chatbot
+            {
+                position: absolute;
+                bottom: 41px;
+                right: 221px;
+                display: none;
+                width: 150px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 52px;
+                z-index: 9;
+                opacity: 1;
+            }
+                #uk-retourFormationZone-formation-chatbot button
+                {
+                    width: 335px;
+                    height: 100%;
+                    font-size: 16px;
+                    border-radius: 10px;
+                    cursor: pointer;
+                    border: solid 1.5px #c04848;
+                    border-left: 0;
+                    border-top-left-radius: 0;
+                    border-bottom-left-radius: 0;
+                    opacity: 1;
+                }
+                    #uk-retourFormationBtn-formation-chatbot
+                    {
+                        background-color: white;
+                        color: black;
+                        opacity: 1;
+                    }
+                    #uk-retourFormationBtn-formation-chatbot:hover
+                    {
+                        color: #c04848;
+                        background-color: #f7f7f7;
+                        opacity: 1;
+                    }
+
             #uk-formationValidateBtn1-formation-chatbot
             {
                 width: 64px;
@@ -1390,6 +1440,10 @@ document.addEventListener('DOMContentLoaded', function ()
                 case 'endFormation':
                     endChatFormation();
                     break;
+
+                case 'endChatFormationBis':
+                    endChatFormationBis()
+                    break;
             }
         } else
         { 
@@ -1532,7 +1586,7 @@ document.addEventListener('DOMContentLoaded', function ()
 
             setTimeout(() =>
             {
-                showMessageFormation(messageInnerFormation, "D'accord, savez-vous vers quel métier vous orienter ?", 'bot');
+                showMessageFormation(messageInnerFormation, "Savez-vous vers quel métier vous orienter ?", 'bot');
             }, 250);
 
             btnOuiFormation.onclick = () =>
@@ -1568,7 +1622,7 @@ document.addEventListener('DOMContentLoaded', function ()
             {
                 showMessageFormation(messageInnerFormation, "Oui.", 'user');
 
-                showJobSelection();
+                showFormationSelection();
             }
             else
             {
@@ -1622,6 +1676,49 @@ document.addEventListener('DOMContentLoaded', function ()
             } 
         }
 
+        /**
+         * Affiche une liste de métiers pour permettre à l’utilisateur de faire un choix.
+         * 
+         * Cette fonction affiche un message demandant à l’utilisateur de sélectionner un métier
+         * dans une liste, puis active la zone de sélection (`list1`). Une fois la sélection validée,
+         * elle identifie l’index du métier choisi dans `listeFormationsSite`, l’affiche dans la conversation,
+         * et appelle la fonction `askConsultJobSheet`. L’étape actuelle ainsi que l’index sélectionné sont
+         * enregistrés dans `sessionStorage` pour garantir une reprise fluide.
+         * 
+         * @function showJobSelection
+         * @returns {void} Cette fonction ne retourne rien.
+         */
+        function showFormationSelection()
+        { 
+            sessionStorage.setItem('currentStepFormation', 'showFormationSelection');
+            afficherZone('list1');
+
+            setTimeout(() =>
+            {
+                showMessageFormation(messageInnerFormation, "De quel métier s'agit-il ?", 'bot');
+            }, 250);
+            setTimeout(() =>
+            {
+                showMessageFormation(messageInnerFormation, "Cliquez sur 'Choisis un métier...' puis validez", 'bot');
+            }, 300);
+
+            validateBtnFormation1.addEventListener('click', handleFormationSubmit);
+            function handleFormationSubmit()
+            {
+                const selectedValue = jobSelectFormation.value;
+
+                if (selectedValue)
+                {
+                    const selectedIndex = window.listeFormationsSite.findIndex(formation => formation.nom === selectedValue);
+                    showMessageFormation(messageInnerFormation, selectedValue, 'user');
+
+                    validateBtnFormation1.removeEventListener('click', handleFormationSubmit);
+
+                    askConsultFormationSheet(selectedIndex);
+                }
+            } 
+        }
+
 
         /**
          * Propose à l’utilisateur de consulter la fiche métier d’un métier sélectionné.
@@ -1663,6 +1760,46 @@ document.addEventListener('DOMContentLoaded', function ()
             };
         }
 
+        /**
+         * Propose à l’utilisateur de consulter la fiche métier d’un métier sélectionné.
+         * 
+         * Cette fonction demande à l’utilisateur s’il souhaite consulter la fiche métier
+         * correspondant au métier choisi. Selon sa réponse, elle appelle `handleConsultJobSheetnResponse`
+         * avec le lien vers la fiche métier ou `null`, et poursuit la conversation en conséquence.
+         * 
+         * @function askConsultJobSheet
+         * @param {number} jobindex - L’index du métier sélectionné dans la liste des formations.
+         * @returns {void} Cette fonction ne retourne rien.
+         */
+        function askConsultFormationSheet(jobindex)
+        { 
+            afficherZone('buttons');
+
+            const job =     window.listeFormationsSite[jobindex].nom;
+            const jobLink = window.listeFormationsSite[jobindex].lien;
+
+            setTimeout(() =>
+            {
+                showMessageFormation(messageInnerFormation, `Voulez-vous consulter la fiche métier de ${job} sur notre site ?`, 'bot');
+            }, 250);
+
+            btnOuiFormation.onclick = () =>
+            {
+                showMessageFormation(messageInnerFormation, "Oui.", 'user');
+                boolRespond = true;
+
+                handleConsultFormationSheetnResponse(boolRespond, jobLink);
+            };
+
+            btnNonFormation.onclick = () =>
+            {
+                showMessageFormation(messageInnerFormation, "Non.", 'user');
+                boolRespond = false;
+
+                handleConsultFormationSheetnResponse(boolRespond, null);
+            };
+        }
+
 
         /**
          * Gère la réponse de l’utilisateur concernant la consultation d’une fiche métier.
@@ -1682,6 +1819,31 @@ document.addEventListener('DOMContentLoaded', function ()
                 showFicheMetier(messageInnerFormation, jobLink);
 
                 endChat();
+            }
+            else
+            {
+                proposeDiscovery();
+            }
+        }
+
+        /**
+         * Gère la réponse de l’utilisateur concernant la consultation d’une fiche métier.
+         * 
+         * Si l’utilisateur accepte (`true`), la fiche métier est affichée via `showFicheMetier`
+         * et la conversation est terminée avec `endChat`. Sinon (`false`), le chatbot propose
+         * d’explorer d’autres métiers avec `proposeDiscovery`.
+         * 
+         * @function handleConsultFormationSheetnResponse
+         * @param {boolean} response - Indique si l’utilisateur souhaite consulter la fiche métier.
+         * @param {string|null} jobLink - Lien vers la fiche métier, ou `null` si non applicable.
+         * @returns {void} Cette fonction ne retourne rien.
+         */
+        function handleConsultFormationSheetnResponse(response, jobLink) {
+            if (response === true)
+            {
+                showFicheMetier(messageInnerFormation, jobLink);
+
+                endChatFormationBis();
             }
             else
             {
@@ -1787,6 +1949,36 @@ document.addEventListener('DOMContentLoaded', function ()
             {
                 showMessageFormation(messageInnerFormation, "On continue la visite ? cliquez sur Réinitialiser le chat pour repartir au début", 'bot');
             }, 300);
+        }
+
+        /**
+         * Termine la conversation avec l’utilisateur.
+         * 
+         * Cette fonction affiche un message de remerciement, change la zone d’affichage pour 
+         * indiquer la fin de la conversation (zone 'finish'), et enregistre l’étape finale 
+         * dans `sessionStorage` pour marquer la fin de l’interaction.
+         * 
+         * @function endChat
+         * @returns {void} Cette fonction ne retourne rien.
+         */
+        function endChatFormationBis()
+        {
+            sessionStorage.setItem('currentStepFormation', 'endChatFormationBis');
+            afficherZone('retourFormations');
+
+            setTimeout(() =>
+            {
+                showMessageFormation(messageInnerFormation, "Vous voulez voir d'autres métiers ?, Cliquez sur Réinitialiser. Pour repartir du début, cliquez sur ↻ en haut à droite.", 'bot');
+            }, 300);
+        }
+
+        retourFormationBtnFormation.addEventListener('click', retourFormationChat);
+        function retourFormationChat()
+        {
+            messageInnerFormation.innerHTML = '';
+            sessionStorage.removeItem('chatHistoryFormation');
+
+            showFormationSelection();
         }
 
 
@@ -2200,50 +2392,55 @@ document.addEventListener('DOMContentLoaded', function ()
          */
         function afficherZone(type)
         {
-            texteZoneFormation.style.display =          'none';
-            rangeZoneFormation.style.display =          'none';
-            buttonsZoneFormation.style.display =        'none';
-            selectZoneFormation.style.display =         'none';
-            finishZoneFormation.style.display =         'none';
-            choiceZoneFormation.style.display =         'none';
+            texteZoneFormation.style.display =           'none';
+            rangeZoneFormation.style.display =           'none';
+            buttonsZoneFormation.style.display =         'none';
+            selectZoneFormation.style.display =          'none';
+            finishZoneFormation.style.display =          'none';
+            choiceZoneFormation.style.display =          'none';
 
-            validateBtnFormation1.style.display =       'none';
-            validateBtnFormation2.style.display =       'none';
+            validateBtnFormation1.style.display =        'none';
+            validateBtnFormation2.style.display =        'none';
+            retourFormationZoneFormation.style.display = 'none';
 
             if (type === 'text')
             {
-                texteZoneFormation.style.display =      'block';
-                validateBtnFormation1.style.display =   'block';
+                texteZoneFormation.style.display =       'block';
+                validateBtnFormation1.style.display =    'block';
             }
             else if (type === 'range')
             {
-                rangeZoneFormation.style.display =      'block';
-                validateBtnFormation1.style.display =   'block';
+                rangeZoneFormation.style.display =       'block';
+                validateBtnFormation1.style.display =    'block';
             }
             else if (type === 'buttons')
             {
-                buttonsZoneFormation.style.display =    'flex';
+                buttonsZoneFormation.style.display =     'flex';
             }
             else if (type === 'list1')
             {
-                selectZoneFormation.style.display =     'block';
-                validateBtnFormation1.style.display =   'block';
+                selectZoneFormation.style.display =      'block';
+                validateBtnFormation1.style.display =    'block';
             }
             else if (type === 'list2')
             {
-                selectZoneFormation.style.display =     'block';
-                validateBtnFormation2.style.display =   'block';
+                selectZoneFormation.style.display =      'block';
+                validateBtnFormation2.style.display =    'block';
             }
             else if (type === 'finish')
             {
-                finishZoneFormation.style.display =     'block';
+                finishZoneFormation.style.display =      'block';
             }
             else if (type === 'returnChoice')
             {
-                choiceZoneFormation.style.display =     'flex';
+                choiceZoneFormation.style.display =      'flex';
 
-                returnChoiceZoneFormation.disabled =    false;
-                returnCritere.disabled =                false;
+                returnChoiceZoneFormation.disabled =     false;
+                returnCritere.disabled =                 false;
+            }
+            else if (type === 'retourFormations')
+            {
+                retourFormationZoneFormation.style.display = 'block';
             }
             else
             {
@@ -2617,6 +2814,11 @@ document.addEventListener('DOMContentLoaded', function ()
 
 
 
+
+
+
+
+
 /**
  * 
  * 
@@ -2630,6 +2832,11 @@ document.addEventListener('DOMContentLoaded', function ()
  * 
  * 
  */
+
+
+
+
+
 
 
 
@@ -3812,7 +4019,7 @@ document.addEventListener('DOMContentLoaded', function ()
             sessionStorage.removeItem('formations');
             sessionStorage.removeItem('thematique');
 
-            retourAccueil();
+            chercherSite();
         }
     }
 
