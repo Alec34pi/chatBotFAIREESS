@@ -350,7 +350,7 @@ document.addEventListener('DOMContentLoaded', function ()
 
     
     /* Grand/moyen écran */
-        @media (min-width: 700px) and (min-height: 800px)
+        @media (min-width: 401px)
         {
 
         /* style de la pop-up */
@@ -1291,7 +1291,7 @@ document.addEventListener('DOMContentLoaded', function ()
 
 
     /* Petit écran */
-        @media (max-width: 699px), (max-height: 799px)
+        @media (max-width: 400px)
         {
 
         /* style de la pop-up */
