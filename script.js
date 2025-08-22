@@ -158,13 +158,21 @@ document.addEventListener('DOMContentLoaded', function ()
 
                     const returnChoiceZoneFormation =        document.createElement('button');
                     returnChoiceZoneFormation.id =           'uk-formationResetChoiceZoneBtn-formation-chatbot';
-                    returnChoiceZoneFormation.textContent =  'Retour aux formations conseillé';
+                    returnChoiceZoneFormation.textContent =  'voir mes formations sans niveau d étude';
                     returnChoiceZoneFormation.disabled =     true;
 
                     const returnCritere =        document.createElement('button');
                     returnCritere.id =           'uk-formationResetChatZoneBtn-formation-chatbot';
                     returnCritere.textContent =  'Retour aux choix des compétences';
                     returnCritere.disabled =     true;
+                
+                const onlyChoiceZoneFormation = document.createElement('div');
+                onlyChoiceZoneFormation.id =    'uk-formationsOnlyChoiceZone-formation-chatbot';
+
+                    const returnChoiceCritere =        document.createElement('button');
+                    returnChoiceCritere.id =           'uk-formationOnlyChoiceChatZoneBtn-formation-chatbot';
+                    returnChoiceCritere.textContent =  'Retour aux choix des compétences';
+                    returnChoiceCritere.disabled =     true;
 
                 const retourFormationZoneFormation = document.createElement('div');
                 retourFormationZoneFormation.id =    'uk-retourFormationZone-formation-chatbot';
@@ -172,6 +180,10 @@ document.addEventListener('DOMContentLoaded', function ()
                     const retourFormationBtnFormation =       document.createElement('button');
                     retourFormationBtnFormation.id =          'uk-retourFormationBtn-formation-chatbot';
                     retourFormationBtnFormation.textContent = 'Retour aux métiers';
+
+                    const retourDebut =        document.createElement('button');
+                    retourDebut.id =           'uk-formationRetourDebutBtn-formation-chatbot';
+                    retourDebut.textContent =  'retour au début du chat';
 
                 const validateBtnFormation1 =     document.createElement('button');
                 validateBtnFormation1.id =        'uk-formationValidateBtn1-formation-chatbot';
@@ -288,6 +300,9 @@ document.addEventListener('DOMContentLoaded', function ()
     choiceZoneFormation.appendChild(returnCritere);
 
     retourFormationZoneFormation.appendChild(retourFormationBtnFormation);
+    retourFormationZoneFormation.appendChild(retourDebut);
+
+    onlyChoiceZoneFormation.appendChild(returnChoiceCritere);
 
     formationPage.appendChild(buttonsBorderFormation);
     formationPage.appendChild(formationTitle);
@@ -300,6 +315,7 @@ document.addEventListener('DOMContentLoaded', function ()
     formationPage.appendChild(finishZoneFormation);
     formationPage.appendChild(retourFormationZoneFormation);
     formationPage.appendChild(choiceZoneFormation);
+    formationPage.appendChild(onlyChoiceZoneFormation);
     formationPage.appendChild(validateBtnFormation1);
     formationPage.appendChild(validateBtnFormation2);
 
@@ -831,6 +847,47 @@ document.addEventListener('DOMContentLoaded', function ()
                         opacity: 1;
                     }
 
+                #uk-formationsOnlyChoiceZone-formation-chatbot
+                {
+                    position: absolute;
+                    bottom: 41px;
+                    right: 60px;
+                    display: none;
+                    width: 300px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    height: 52px;
+                    z-index: 9;
+                    opacity: 1;
+                }
+
+                    #uk-formationsOnlyChoiceZone-formation-chatbot button
+                    {
+                        width: 335px;
+                        height: 100%;
+                        font-size: 16px;
+                        border-radius: 10px;
+                        cursor: pointer;
+                        border: solid 1.5px #c04848;
+                        border-left: 0;
+                        border-top-left-radius: 0;
+                        border-bottom-left-radius: 0;
+                        opacity: 1;
+                    }
+                        #uk-formationOnlyChoiceChatZoneBtn-formation-chatbot
+                        {
+                            background-color: white;
+                            color: black;
+                            opacity: 1;
+                        }
+                        #uk-formationOnlyChoiceChatZoneBtn-formation-chatbot:hover
+                        {
+                            color: #c04848;
+                            background-color: #f7f7f7;
+                            opacity: 1;
+                        }
+
             #uk-formationSelectZone-formation-chatbot
             {
                 position: absolute;
@@ -908,40 +965,58 @@ document.addEventListener('DOMContentLoaded', function ()
             #uk-retourFormationZone-formation-chatbot
             {
                 position: absolute;
-                bottom: 41px;
-                right: 221px;
+                bottom: 31px;
+                right: 20px;
                 display: none;
-                width: 150px;
+                width: 335px;
                 display: flex;
-                justify-content: center;
                 align-items: center;
-                height: 52px;
+                height: 54px;
                 z-index: 9;
+                border: solid 1.5px #c04848;
+                border-left: 0;
+                border-top-right-radius: 8px;
+                border-bottom-right-radius: 8px;
+                background-color: white;
                 opacity: 1;
             }
                 #uk-retourFormationZone-formation-chatbot button
                 {
-                    width: 335px;
-                    height: 100%;
+                    width: 49%;
+                    height: 97%;
                     font-size: 16px;
-                    border-radius: 10px;
                     cursor: pointer;
-                    border: solid 1.5px #c04848;
-                    border-left: 0;
-                    border-top-left-radius: 0;
-                    border-bottom-left-radius: 0;
+                    background-color: white;
                     opacity: 1;
                 }
                     #uk-retourFormationBtn-formation-chatbot
                     {
-                        background-color: white;
-                        color: black;
+                        border-top-right-radius: 8px;
+                        border-bottom-right-radius: 8px;
+                        border: none;
+                        border-left: solid 0.5px #c04848;
                         opacity: 1;
                     }
                     #uk-retourFormationBtn-formation-chatbot:hover
                     {
-                        color: #c04848;
                         background-color: #f7f7f7;
+                        color: #c04848;
+                        opacity: 1;
+                    }
+
+                    #uk-formationRetourDebutBtn-formation-chatbot
+                    {
+                        border: none;
+                        border-right: solid 0.5px #c04848;
+                        opacity: 1;
+                        border-top-right-radius: 6px;
+                        border-bottom-right-radius: 6px;
+                    }
+
+                    #uk-formationRetourDebutBtn-formation-chatbot:hover
+                    {
+                        background-color: #f7f7f7;
+                        color: #c04848;
                         opacity: 1;
                     }
 
@@ -2373,6 +2448,18 @@ document.addEventListener('DOMContentLoaded', function ()
                 case 'endChatFormationBis':
                     endChatFormationBis()
                     break;
+
+                case 'askReturnFormationConseille':
+                    askReturnFormationConseille()
+                    break;
+
+                case 'AffichageFormationsCorrespondant2':
+                    softSkillsAffichage2()
+                    break;
+
+                case 'askReturnFormationConseille2':
+                    askReturnFormationConseille2()
+                    break;
             }
         } else
         { 
@@ -2917,28 +3004,6 @@ document.addEventListener('DOMContentLoaded', function ()
 
 
         /**
-         * Termine la session de chat formation.
-         * 
-         * Cette fonction met à jour l’état courant dans `sessionStorage`, affiche la zone 
-         * de choix de retour, puis affiche un message final après un court délai pour guider 
-         * l’utilisateur vers la suite.
-         * 
-         * @function endChatFormation
-         * @returns {void} Cette fonction ne retourne rien.
-         */
-        function endChatFormation()
-        {
-            sessionStorage.setItem('currentStepFormation', 'endFormation');
-            afficherZone('returnChoice');
-
-            setTimeout(() =>
-            {
-                showMessageFormation(messageInnerFormation, "Vous pouvez retourner à la liste des formations qui vous correspondent ou revoir vos compétences si besoin", 'bot');
-            }, 150);
-        }
-
-
-        /**
          * Démarre la séquence de questions sur les soft skills dans le parcours de formation.
          * 
          * Cette fonction :
@@ -2969,8 +3034,13 @@ document.addEventListener('DOMContentLoaded', function ()
 
             setTimeout(() =>
             {
-                showMessageFormation(messageInnerFormation, "Je vais vous poser des questions et vous me direz si vous pensez posséder cette faculté ou pas.", 'bot');
+                showMessageFormation(messageInnerFormation, "⚠️ Le fait de ne pas posséder une compétence demandé par une formation ne bloque pas l'accès : les formations sont justement faites pour apprendre et développer ces compétences.", 'bot');
             }, 250);
+
+            setTimeout(() =>
+            {
+                showMessageFormation(messageInnerFormation, "Je vais vous poser des questions et vous me direz si vous pensez posséder cette faculté ou pas.", 'bot');
+            }, 350);
 
             const SoftSkillsData =
             [
@@ -3058,7 +3128,7 @@ document.addEventListener('DOMContentLoaded', function ()
                 }
 
                 poserQuestionSoftskills(indexBoucleStart);
-            }, 300);
+            }, 450);
         }
 
 
@@ -3135,7 +3205,7 @@ document.addEventListener('DOMContentLoaded', function ()
             const userLevel =                   parseInt(sessionStorage.getItem('userNiveau'), 10);
 
             const formationsFiltreesParNiveau = donneesFormation.filter(formation => {
-                return formation.niveau <= userLevel;
+                return formation.niveau <= userLevel + 1
             });
 
             const formationsAvecScore =         formationsFiltreesParNiveau.map(formation => {
@@ -3193,8 +3263,13 @@ document.addEventListener('DOMContentLoaded', function ()
             }, 150);
             setTimeout(() =>
             {
-                showMessageFormation(messageInnerFormation, "Choisissez la formation qui vous intéresse et validez.", 'bot');
+                showMessageFormation(messageInnerFormation, "⚠️ Les formations proposées ici sont données à titre informatif. Pour avoir des informations précises et personnalisées, merci de contacter directement le Conseil Orientation Financement.", 'bot');
+                showFicheMetier(messageInnerFormation, "https://www.faire-ess.fr/fr/cof", false);
             }, 250);
+            setTimeout(() =>
+            {
+                showMessageFormation(messageInnerFormation, "Choisissez la formation qui vous intéresse et validez.", 'bot');
+            }, 350);
 
             validateBtnFormation2.addEventListener('click', handleMetierCorrespondantChoice);
             function handleMetierCorrespondantChoice()
@@ -3236,8 +3311,226 @@ document.addEventListener('DOMContentLoaded', function ()
 
             setTimeout(() =>
             {
-                endChatFormation();
+                askReturnFormationConseille();
             }, 200);
+        }
+
+        
+        function askReturnFormationConseille()
+        { 
+            sessionStorage.setItem('currentStepFormation', 'askReturnFormationConseille');
+            afficherZone('buttons');
+
+            setTimeout(() =>
+            {
+                showMessageFormation(messageInnerFormation, "Voulez-vous retourner à la liste des formations qui vous correspondent ?", 'bot');
+            }, 250);
+
+            btnOuiFormation.onclick = () =>
+            {
+                boolRespond = true;
+
+                handleReturnFormationConseille(boolRespond);
+            };
+
+            btnNonFormation.onclick = () =>
+            {
+                boolRespond = false;
+
+                handleReturnFormationConseille(boolRespond);
+            }; 
+        }
+
+
+        
+        function handleReturnFormationConseille(response)
+        {
+            if (response === true)
+            {
+                showMessageFormation(messageInnerFormation, "Oui.", 'user');
+
+                messageInnerFormation.innerHTML = '';
+                sessionStorage.removeItem('linkHistory');
+
+                sessionStorage.removeItem('chatHistoryFormation');
+                showMessageFormation(messageInnerFormation, "retourner à la liste des formations", 'user');
+                softSkillsAffichage();
+            }
+            else
+            {
+                showMessageFormation(messageInnerFormation, "Non.", 'user');
+
+                endChatFormation();
+            }
+        }
+
+        function endChatFormation()
+        {
+            sessionStorage.setItem('currentStepFormation', 'endFormation');
+            afficherZone('returnChoice');
+
+            setTimeout(() =>
+            {
+                showMessageFormation(messageInnerFormation, "Voulez-vous voir la liste des formations qui vous correspondent sans prendre en compte le niveau d'étude ou changer les compétences du questionnaire ?", 'bot');
+            }, 150);
+        }
+
+
+
+        returnChoiceZoneFormation.addEventListener('click', returnChoiceFormation)
+        function returnChoiceFormation()
+        {
+             setTimeout(() =>
+            {
+                showMessageFormation(messageInnerFormation, "voir mes formations sans niveau d étude", 'user');
+            }, 150);
+
+             setTimeout(() =>
+            {
+                softSkillsCalculated2();
+            }, 250);
+        }
+
+
+        function softSkillsCalculated2()
+        {
+            afficherZone('');
+
+            const reponsesFinales =             JSON.parse(sessionStorage.getItem('reponseUserSoftSkills') || '[]');
+            const donneesFormation =            window.listeFormationsSite;
+
+            const formationsAvecScore =         donneesFormation.map(formation => {
+                let score = 0;
+
+                reponsesFinales.forEach(({ aptitude, reponse }) => {
+                    if (reponse === true && formation[aptitude] === true)
+                    {
+                        score++;
+                    }
+                });
+
+                return { ...formation, score: score };
+            });
+
+            const formationsTrieesParScore =    formationsAvecScore.sort((a, b) => b.score - a.score);
+
+            const top3Formations =              formationsTrieesParScore.slice(0, 3);
+            sessionStorage.setItem('formationConseil2', JSON.stringify(top3Formations));
+
+            softSkillsAffichage2();
+        }
+
+        function softSkillsAffichage2()
+        {
+            sessionStorage.setItem('currentStepFormation', 'AffichageFormationsCorrespondant2');
+
+            setTimeout(() =>
+            {
+                remplirListeFormation();
+            }, 50);
+
+            afficherZone('list2');
+
+            setTimeout(() =>
+            {
+                showMessageFormation(messageInnerFormation, "Les formations correspondantes sont visibles en cliquant sur 'Choisis un métier…'  ", 'bot');
+            }, 150);
+            setTimeout(() =>
+            {
+                showMessageFormation(messageInnerFormation, "⚠️ Les formations proposées ici sont données à titre informatif. Pour avoir des informations précises et personnalisées, merci de contacter directement le COF.  ", 'bot');
+            }, 250);
+            setTimeout(() =>
+            {
+                showMessageFormation(messageInnerFormation, "Choisissez la formation qui vous intéresse et validez.  ", 'bot');
+            }, 350);
+
+            validateBtnFormation2.addEventListener('click', handleMetierCorrespondantChoice);
+            function handleMetierCorrespondantChoice()
+            {
+                const selectedValue =   jobSelectFormation.value;
+
+                if (selectedValue)
+                {
+                    const selectedName =    window.listeFormationsSite.findIndex(formation => formation.nom === selectedValue);
+                    showMessageFormation(messageInnerFormation, selectedValue, 'user');
+
+                    const jobLink =         window.listeFormationsSite[selectedName].lien;
+
+                    validateBtnFormation2.removeEventListener('click', handleMetierCorrespondantChoice);
+
+                    setTimeout(() =>
+                    {
+                        ConsultJobSheetFormationCorrespondant2(jobLink);
+                    }, 350);
+                }
+            } 
+        }
+
+        function ConsultJobSheetFormationCorrespondant2(jobLink)
+        {
+            setTimeout(() =>
+            {
+                showFicheMetier(messageInnerFormation, jobLink);
+            }, 100);
+
+            setTimeout(() =>
+            {
+                askReturnFormationConseille2();
+            }, 200);
+        }
+
+        function askReturnFormationConseille2()
+        { 
+            sessionStorage.setItem('currentStepFormation', 'askReturnFormationConseille2');
+            afficherZone('buttons');
+
+            setTimeout(() =>
+            {
+                showMessageFormation(messageInnerFormation, "Voulez-vous retourner à la liste des formations qui vous correspondent ?  ", 'bot');
+            }, 250);
+
+            btnOuiFormation.onclick = () =>
+            {
+                boolRespond = true;
+
+                handleReturnFormationConseille2(boolRespond);
+            };
+
+            btnNonFormation.onclick = () =>
+            {
+                boolRespond = false;
+
+                handleReturnFormationConseille2(boolRespond);
+            }; 
+        }
+
+        function handleReturnFormationConseille2(response)
+        {
+            if (response === true)
+            {
+                
+                // retour à l'affichage des formations 2
+                showMessageFormation(messageInnerFormation, "Oui.", 'user');
+
+                messageInnerFormation.innerHTML = '';
+                sessionStorage.removeItem('linkHistory');
+
+                sessionStorage.removeItem('chatHistoryFormation');
+                showMessageFormation(messageInnerFormation, "retourner à la liste des formations", 'user');
+                softSkillsAffichage2();
+            }
+            else
+            {
+                showMessageFormation(messageInnerFormation, "Non.", 'user');
+
+                sessionStorage.setItem('currentStepFormation', 'endFormation');
+                afficherZone('onlyChoice');
+
+                setTimeout(() =>
+                {
+                    showMessageFormation(messageInnerFormation, "voulez-vous refaire le test ?", 'bot');
+                }, 150);
+            }
         }
 
 
@@ -3336,6 +3629,7 @@ document.addEventListener('DOMContentLoaded', function ()
             validateBtnFormation1.style.display =        'none';
             validateBtnFormation2.style.display =        'none';
             retourFormationZoneFormation.style.display = 'none';
+            onlyChoiceZoneFormation.style.display =      'none';
 
             if (type === 'text')
             {
@@ -3372,9 +3666,15 @@ document.addEventListener('DOMContentLoaded', function ()
                 returnChoiceZoneFormation.disabled =     false;
                 returnCritere.disabled =                 false;
             }
+            else if (type === 'onlyChoice')
+            {
+                onlyChoiceZoneFormation.style.display =  'flex';
+
+                returnChoiceCritere.disabled =           false;
+            }
             else if (type === 'retourFormations')
             {
-                retourFormationZoneFormation.style.display = 'block';
+                retourFormationZoneFormation.style.display = 'flex';
             }
             else
             {
@@ -3440,7 +3740,11 @@ document.addEventListener('DOMContentLoaded', function ()
         function remplirListeFormation() {
             jobSelectFormation.innerHTML = "";
 
-            const dataJSON = sessionStorage.getItem('formationConseil');
+            if (sessionStorage.getItem('formationConseil2')) {
+                dataJSON = sessionStorage.getItem('formationConseil2');
+            } else {
+                dataJSON = sessionStorage.getItem('formationConseil');
+            }
 
             if (!dataJSON) {
                 jobSelectFormation.innerHTML = '<option value="vide" disabled selected>Aucune donnée disponible</option>';
@@ -3612,7 +3916,13 @@ document.addEventListener('DOMContentLoaded', function ()
         function showFicheMetier(container, link, saveHistory = true)
         {
             const linkDiv =         document.createElement('a');
-            linkDiv.textContent =   "Fiche métier";
+            if (link !== "https://www.faire-ess.fr/fr/cof") {
+                linkDiv.textContent =   "Fiche métier";
+            }
+            else
+            {
+                linkDiv.textContent =   "Page COF";
+            }
             linkDiv.href =          link;
             linkDiv.classList.add('uk-linkDiv-formation-chatbot');
 
@@ -3634,7 +3944,9 @@ document.addEventListener('DOMContentLoaded', function ()
                 linkHistory.push(link);
                 sessionStorage.setItem('linkHistory', JSON.stringify(linkHistory));
 
-                window.location.href = link;
+                if (link !== "https://www.faire-ess.fr/fr/cof") {
+                    window.location.href = link;
+                }
             }
         }
 
@@ -3671,6 +3983,7 @@ document.addEventListener('DOMContentLoaded', function ()
          */
         resetBtnFormation.addEventListener('click', resetChat);
         finishBtnFormation.addEventListener('click', resetChat);
+        retourDebut.addEventListener('click', resetChat);
         function resetChat()
         {
             messageInnerFormation.innerHTML = '';
@@ -3703,6 +4016,7 @@ document.addEventListener('DOMContentLoaded', function ()
          * @returns {void} - Cette fonction ne retourne rien.
          */
         returnCritere.addEventListener('click', returnCritereFormation);
+        returnChoiceCritere.addEventListener('click', returnCritereFormation);
         function returnCritereFormation()
         {
             messageInnerFormation.innerHTML = '';
@@ -3720,27 +4034,6 @@ document.addEventListener('DOMContentLoaded', function ()
             sessionStorage.removeItem('linkHistory');
 
             softSkillsQuestion(currentStepSoftSkills);
-        }
-
-
-        /**
-         * Gère le retour à la liste des formations depuis une zone spécifique.
-         * Efface les messages précédents, réinitialise l'historique de session,
-         * affiche un message utilisateur, et relance l'affichage des soft skills.
-         * 
-         * 
-         * @function returnChoiceFormation
-         * @returns {void} - Cette fonction ne retourne rien.
-         */
-        returnChoiceZoneFormation.addEventListener('click', returnChoiceFormation)
-        function returnChoiceFormation()
-        {
-            messageInnerFormation.innerHTML = '';
-            sessionStorage.removeItem('linkHistory');
-
-            sessionStorage.removeItem('chatHistoryFormation');
-            showMessageFormation(messageInnerFormation, "retourner à la liste des formations", 'user');
-            softSkillsAffichage();
         }
     }
 
