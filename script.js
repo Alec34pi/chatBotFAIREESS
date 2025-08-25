@@ -181,7 +181,7 @@ document.addEventListener('DOMContentLoaded', function ()
 
                     const retourFormationBtnFormation =       document.createElement('button');
                     retourFormationBtnFormation.id =          'uk-retourFormationBtn-formation-chatbot';
-                    retourFormationBtnFormation.textContent = 'Retour aux métiers';
+                    retourFormationBtnFormation.textContent = 'Formation me correspondant';
 
                     const retourDebut =        document.createElement('button');
                     retourDebut.id =           'uk-formationRetourDebutBtn-formation-chatbot';
@@ -641,11 +641,11 @@ document.addEventListener('DOMContentLoaded', function ()
                     .uk-chat-message-formation-chatbot
                     {
                         padding: 8px;
-                        margin-bottom: 5px;
+                        margin-bottom: 2px;
                         border-radius: 10px;
                         max-width: 80%;
                         word-wrap: break-word;
-                        font-size: 16px;
+                        font-size: 15px;
                         opacity: 1;
                     }
                         .uk-user-message-formation-chatbot
@@ -1162,11 +1162,11 @@ document.addEventListener('DOMContentLoaded', function ()
                     .uk-chat-message-site-chatbot
                     {
                         padding: 8px;
-                        margin-bottom: 5px;
+                        margin-bottom: 2px;
                         border-radius: 10px;
                         max-width: 80%;
                         word-wrap: break-word;
-                        font-size: 16px;
+                        font-size: 15px;
                         opacity: 1;
                     }
                         .uk-user-message-site-chatbot
@@ -2991,7 +2991,7 @@ document.addEventListener('DOMContentLoaded', function ()
 
             setTimeout(() =>
             {
-                showMessageFormation(messageInnerFormation, "Vous voulez voir d'autres métiers ?, Cliquez sur Réinitialiser. Pour repartir du début, cliquez sur ↻ en haut à droite.", 'bot');
+                showMessageFormation(messageInnerFormation, "Vous voulez voir les métiers qui vous correspondent ou repartir du début de la conversation ?", 'bot');
             }, 300);
         }
 
@@ -2999,10 +2999,11 @@ document.addEventListener('DOMContentLoaded', function ()
         retourFormationBtnFormation.addEventListener('click', retourFormationChat);
         function retourFormationChat()
         {
-            messageInnerFormation.innerHTML = '';
-            sessionStorage.removeItem('chatHistoryFormation');
-
-            showFormationSelection();
+            setTimeout(() =>
+            {
+                showMessageFormation(messageInnerFormation, "voir les formations me correspondant", 'user');
+            }, 100);
+            softSkillsQuestion(currentStepSoftSkills);
         }
 
 
@@ -3037,12 +3038,12 @@ document.addEventListener('DOMContentLoaded', function ()
 
             setTimeout(() =>
             {
-                showMessageFormation(messageInnerFormation, "Je vais vous poser des questions et vous me direz si vous pensez posséder cette faculté ou pas.", 'bot');
+                showMessageFormation(messageInnerFormation, "Je vais vous poser des questions et vous me direz si vous pensez posséder cette compétence ou pas.", 'bot');
             }, 250);
 
             setTimeout(() =>
             {
-                showMessageFormation(messageInnerFormation, "⚠️ Le fait de ne pas posséder une faculté demandé par une formation ne bloque pas l'accès : les formations sont justement faites pour apprendre et développer ces compétences.", 'bot');
+                showMessageFormation(messageInnerFormation, "⚠️ Le fait de ne pas posséder une compétence demandée par une formation ne bloque pas l'accès : les formations sont justement faites pour apprendre et développer ces compétences.", 'bot');
             }, 350);
 
             const SoftSkillsData =
@@ -3084,7 +3085,7 @@ document.addEventListener('DOMContentLoaded', function ()
                     {
                         handleButtonsFormation(true);
 
-                        const question = `(${index + 1}/${SoftSkillsData.length}) Considérez-vous posséder cette aptitude : ${SoftSkillsData[index]} ?`;
+                        const question = `(${index + 1}/${SoftSkillsData.length}) Considérez-vous posséder cette compétence : ${SoftSkillsData[index]} ?`;
                         showMessageFormation(messageInnerFormation, question, 'bot');
 
                         btnOuiFormation.onclick = () =>
@@ -3131,7 +3132,7 @@ document.addEventListener('DOMContentLoaded', function ()
                 }
 
                 poserQuestionSoftskills(indexBoucleStart);
-            }, 450);
+            }, 600);
         }
 
 
@@ -3207,9 +3208,20 @@ document.addEventListener('DOMContentLoaded', function ()
             const donneesFormation =            window.listeFormationsSite;
             const userLevel =                   parseInt(sessionStorage.getItem('userNiveau'), 10);
 
-            const formationsFiltreesParNiveau = donneesFormation.filter(formation => {
-                return formation.niveau <= userLevel + 1
-            });
+            const superieurs = {
+                3: 1,
+                4: 2,
+                5: 2,
+                6: 1
+            };
+
+            // calcul du niveau max autorisé
+            const maxNiveau = userLevel + (superieurs[userLevel] || 0);
+
+            // filtrage : on prend tout ce qui est ≤ maxNiveau
+            const formationsFiltreesParNiveau = donneesFormation.filter(formation =>
+                formation.niveau <= maxNiveau
+            );
 
             const formationsAvecScore =         formationsFiltreesParNiveau.map(formation => {
                 let score = 0;
@@ -3222,6 +3234,12 @@ document.addEventListener('DOMContentLoaded', function ()
                 });
 
                 return { ...formation, score: score };
+            });
+
+            formationsAvecScore.forEach(formation => {
+                if (formation.niveau === 5) {
+                    formation.score = formation.score / 1.5;
+                }
             });
 
             const formationsTrieesParScore =    formationsAvecScore.sort((a, b) => b.score - a.score);
@@ -3441,6 +3459,7 @@ document.addEventListener('DOMContentLoaded', function ()
             setTimeout(() =>
             {
                 showMessageFormation(messageInnerFormation, "⚠️ Les formations proposées ici sont données à titre informatif. Pour avoir des informations précises et personnalisées, merci de contacter directement le COF.  ", 'bot');
+                showFicheMetier(messageInnerFormation, "https://www.faire-ess.fr/fr/cof", false);
             }, 250);
             setTimeout(() =>
             {
@@ -3931,7 +3950,7 @@ document.addEventListener('DOMContentLoaded', function ()
 
             container.appendChild(linkDiv);
 
-            if (saveHistory)
+            if (saveHistory && (link !== "https://www.faire-ess.fr/fr/cof"))
             {
                 saveMessageToSessionStorageFormation(link, 'bot', 'link');
             }
