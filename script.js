@@ -37,10 +37,6 @@ document.addEventListener('DOMContentLoaded', function ()
             warning.href = 'https://www.linkedin.com/in/pibre-alec/';
             warning.target = '_blank';
 
-            const warning2 = document.createElement('div');
-            warning2.className = 'uk-warning-chatbot2';
-            warning2.textContent = 'Si un problème survient, relancer votre navigateur.';
-
             const initPage = document.createElement('div');
             initPage.id =    'uk-initPage-chatbot';
 
@@ -325,7 +321,6 @@ document.addEventListener('DOMContentLoaded', function ()
     formationPage.appendChild(onlyChoiceZoneFormation);
     formationPage.appendChild(validateBtnFormation1);
     formationPage.appendChild(validateBtnFormation2);
-    formationPage.appendChild(warning2);
 
     buttonsBorderSite.appendChild(backBtnSite);
     buttonsBorderSite.appendChild(resetBtnSite);
@@ -345,7 +340,6 @@ document.addEventListener('DOMContentLoaded', function ()
     sitePage.appendChild(buttonsZoneSite);
     sitePage.appendChild(finishZoneSite);
     sitePage.appendChild(validateBtnSite);
-    sitePage.appendChild(warning2);
 
     isolatedWrapper.appendChild(sitePage);
     isolatedWrapper.appendChild(formationPage);
@@ -370,7 +364,7 @@ document.addEventListener('DOMContentLoaded', function ()
     .uk-sandbox-chatbot *
     {
         box-sizing: content-box;
-    }
+    }    
 
     
     /* Grand/moyen écran */
@@ -476,7 +470,6 @@ document.addEventListener('DOMContentLoaded', function ()
             .uk-warning-chatbot
             {
                 position: absolute;
-                right: 165px;
                 bottom: 1px;
                 z-index: 1;
                 opacity: 0.75;
@@ -490,17 +483,6 @@ document.addEventListener('DOMContentLoaded', function ()
                 text-align: center;
                 color: #c04848;
                 opacity: 1;
-            }
-
-            .uk-warning-chatbot2
-            {
-                position: absolute;
-                right: 125px;
-                bottom: 1px;
-                z-index: 1;
-                opacity: 0.75;
-                color: #c04848;
-                font-size: 12px
             }
 
     /* style de la page d'initialisation */
@@ -704,6 +686,7 @@ document.addEventListener('DOMContentLoaded', function ()
                 z-index: 10;
                 margin: 20px auto;
                 opacity: 1;
+                border-radius: 5px;
             }
 
             #uk-formationTexteZone-formation-chatbot
@@ -1224,6 +1207,7 @@ document.addEventListener('DOMContentLoaded', function ()
                     z-index: 100;
                     margin: 20px auto;
                     opacity: 1;
+                    border-radius: 5px;
                 }
 
                 #uk-SiteSelectZone-Site-chatbot
@@ -1482,16 +1466,6 @@ document.addEventListener('DOMContentLoaded', function ()
                         background-color: #d25a5a;
                         opacity: 1;
                     }
-            .uk-warning-chatbot
-            {
-                position: absolute;
-                right: 35px;
-                bottom: 1px;
-                z-index: 1;
-                opacity: 0.75;
-                color: #c04848;
-                font-size: 8px;
-            }
             .uk-title-chatbot
             {
                 margin-top: 20px;
@@ -1703,6 +1677,7 @@ document.addEventListener('DOMContentLoaded', function ()
                 z-index: 10;
                 margin: 20px auto;
                 opacity: 1;
+                border-radius: 3px;
             }
 
             #uk-formationTexteZone-formation-chatbot
@@ -2168,6 +2143,7 @@ document.addEventListener('DOMContentLoaded', function ()
                     z-index: 10;
                     margin: 20px auto;
                     opacity: 1;
+                    border-radius: 3px;
                 }
 
                     #uk-SiteSelectZone-Site-chatbot
@@ -2309,6 +2285,16 @@ document.addEventListener('DOMContentLoaded', function ()
                     z-index: 9;
                     opacity: 1;
                 }
+
+            .uk-warning-chatbot
+            {
+                position: absolute;
+                bottom: 1px;
+                z-index: 1;
+                opacity: 0.75;
+                color: #c04848;
+                font-size: 8px
+            }
     }
     `;
     document.head.appendChild(style);
