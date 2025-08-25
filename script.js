@@ -174,7 +174,10 @@ document.addEventListener('DOMContentLoaded', function ()
                     const returnChoiceCritere =        document.createElement('button');
                     returnChoiceCritere.id =           'uk-formationOnlyChoiceChatZoneBtn-formation-chatbot';
                     returnChoiceCritere.textContent =  'Retour aux choix des compétences';
-                    returnChoiceCritere.disabled =     true;
+
+                    const returnStart =        document.createElement('button');
+                    returnStart.id =           'uk-formationReturnStartChatZoneBtn-formation-chatbot';
+                    returnStart.textContent =  'Retour aux début de la conversation';
 
                 const retourFormationZoneFormation = document.createElement('div');
                 retourFormationZoneFormation.id =    'uk-retourFormationZone-formation-chatbot';
@@ -185,7 +188,7 @@ document.addEventListener('DOMContentLoaded', function ()
 
                     const retourDebut =        document.createElement('button');
                     retourDebut.id =           'uk-formationRetourDebutBtn-formation-chatbot';
-                    retourDebut.textContent =  'retour au début du chat';
+                    retourDebut.textContent =  'retour au début de la conversation';
 
                 const validateBtnFormation1 =     document.createElement('button');
                 validateBtnFormation1.id =        'uk-formationValidateBtn1-formation-chatbot';
@@ -306,6 +309,7 @@ document.addEventListener('DOMContentLoaded', function ()
     retourFormationZoneFormation.appendChild(retourDebut);
 
     onlyChoiceZoneFormation.appendChild(returnChoiceCritere);
+    onlyChoiceZoneFormation.appendChild(returnStart);
 
     formationPage.appendChild(buttonsBorderFormation);
     formationPage.appendChild(formationTitle);
@@ -852,41 +856,49 @@ document.addEventListener('DOMContentLoaded', function ()
                 #uk-formationsOnlyChoiceZone-formation-chatbot
                 {
                     position: absolute;
-                    bottom: 41px;
-                    right: 60px;
+                    bottom: 31px;
+                    right: 20px;
                     display: none;
-                    width: 300px;
+                    width: 335px;
                     display: flex;
-                    justify-content: center;
                     align-items: center;
-                    height: 52px;
+                    height: 54px;
                     z-index: 9;
+                    border: solid 1.5px #c04848;
+                    border-left: 0;
+                    border-top-right-radius: 8px;
+                    border-bottom-right-radius: 8px;
+                    background-color: white;
                     opacity: 1;
                 }
 
                     #uk-formationsOnlyChoiceZone-formation-chatbot button
                     {
-                        width: 335px;
-                        height: 100%;
+                        width: 49%;
+                        height: 97%;
                         font-size: 16px;
-                        border-radius: 10px;
                         cursor: pointer;
-                        border: solid 1.5px #c04848;
-                        border-left: 0;
-                        border-top-left-radius: 0;
-                        border-bottom-left-radius: 0;
+                        background-color: white;
                         opacity: 1;
                     }
-                        #uk-formationOnlyChoiceChatZoneBtn-formation-chatbot
+                        #uk-formationsOnlyChoiceZone-formation-chatbot button:hover
                         {
-                            background-color: white;
-                            color: black;
+                            background-color: #f7f7f7;
+                            color: #c04848;
                             opacity: 1;
                         }
-                        #uk-formationOnlyChoiceChatZoneBtn-formation-chatbot:hover
+                        #uk-formationOnlyChoiceChatZoneBtn-formation-chatbot
                         {
-                            color: #c04848;
-                            background-color: #f7f7f7;
+                            border: none;
+                            border-right: solid 0.5px #c04848;
+                            opacity: 1;
+                        }
+                        #uk-formationReturnStartChatZoneBtn-formation-chatbot
+                        {
+                            border-top-right-radius: 8px;
+                            border-bottom-right-radius: 8px;
+                            border: none;
+                            border-left: solid 0.5px #c04848;
                             opacity: 1;
                         }
 
@@ -1835,6 +1847,54 @@ document.addEventListener('DOMContentLoaded', function ()
                         opacity: 1;
                     }
                     #uk-formationResetChoiceZoneBtn-formation-chatbot
+                    {
+                        border: none;
+                        border-right: solid 0.5px #c04848;
+                        opacity: 1;
+                    }
+
+            #uk-formationsOnlyChoiceZone-formation-chatbot
+            {
+                    position: absolute;
+                    bottom: 20px;
+                    right: 15px;
+                    display: none;
+                    width: 120px;
+                    display: flex;
+                    align-items: center;
+                    height: 25px;
+                    z-index: 9;
+                    border: solid 1.5px #c04848;
+                    border-left: 0;
+                    border-top-right-radius: 8px;
+                    border-bottom-right-radius: 8px;
+                    background-color: white;
+                    opacity: 1;
+            }
+                #uk-formationsOnlyChoiceZone-formation-chatbot button
+                {
+                    width: 49%;
+                    height: 95%;
+                    font-size: 7px;
+                    cursor: pointer;
+                    background-color: white;
+                    opacity: 1;
+                }
+                    #uk-formationsOnlyChoiceZone-formation-chatbot button:hover
+                    {
+                        background-color: #f7f7f7;
+                        color: #c04848;
+                        opacity: 1;
+                    }
+                    #uk-formationReturnStartChatZoneBtn-formation-chatbot
+                    {
+                        border-top-right-radius: 8px;
+                        border-bottom-right-radius: 8px;
+                        border: none;
+                        border-left: solid 0.5px #c04848;
+                        opacity: 1;
+                    }
+                    #uk-formationOnlyChoiceChatZoneBtn-formation-chatbot
                     {
                         border: none;
                         border-right: solid 0.5px #c04848;
@@ -3550,7 +3610,7 @@ document.addEventListener('DOMContentLoaded', function ()
 
                 setTimeout(() =>
                 {
-                    showMessageFormation(messageInnerFormation, "voulez-vous refaire le test ?", 'bot');
+                    showMessageFormation(messageInnerFormation, "Voulez-vous refaire le test ou redémarrer la conversation ?", 'bot');
                 }, 150);
             }
         }
@@ -3691,8 +3751,6 @@ document.addEventListener('DOMContentLoaded', function ()
             else if (type === 'onlyChoice')
             {
                 onlyChoiceZoneFormation.style.display =  'flex';
-
-                returnChoiceCritere.disabled =           false;
             }
             else if (type === 'retourFormations')
             {
@@ -4006,6 +4064,7 @@ document.addEventListener('DOMContentLoaded', function ()
         resetBtnFormation.addEventListener('click', resetChat);
         finishBtnFormation.addEventListener('click', resetChat);
         retourDebut.addEventListener('click', resetChat);
+        returnStart.addEventListener('click', resetChat);
         function resetChat()
         {
             messageInnerFormation.innerHTML = '';
