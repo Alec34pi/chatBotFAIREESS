@@ -31,9 +31,15 @@ document.addEventListener('DOMContentLoaded', function ()
                 closeBtn.title =       'Fermer';
                 closeBtn.textContent = 'X';
 
-            const warning =     document.createElement('div');
+            const warning = document.createElement('a');
             warning.className = 'uk-warning-chatbot';
-            warning.textContent = 'En cas de problème, relancez votre navigateur.';
+            warning.textContent = 'Solution développée par PIBRE Alec.';
+            warning.href = 'https://www.linkedin.com/in/pibre-alec/';
+            warning.target = '_blank';
+
+            const warning2 = document.createElement('div');
+            warning2.className = 'uk-warning-chatbot2';
+            warning2.textContent = 'Si un problème survient, relancer votre navigateur.';
 
             const initPage = document.createElement('div');
             initPage.id =    'uk-initPage-chatbot';
@@ -279,6 +285,7 @@ document.addEventListener('DOMContentLoaded', function ()
     initPage.appendChild(initTitle);
     initPage.appendChild(initMascotte);
     initPage.appendChild(initButtons);
+    initPage.appendChild(warning);
 
     buttonsBorderFormation.appendChild(backBtnFormation);
     buttonsBorderFormation.appendChild(resetBtnFormation);
@@ -318,6 +325,7 @@ document.addEventListener('DOMContentLoaded', function ()
     formationPage.appendChild(onlyChoiceZoneFormation);
     formationPage.appendChild(validateBtnFormation1);
     formationPage.appendChild(validateBtnFormation2);
+    formationPage.appendChild(warning2);
 
     buttonsBorderSite.appendChild(backBtnSite);
     buttonsBorderSite.appendChild(resetBtnSite);
@@ -337,12 +345,12 @@ document.addEventListener('DOMContentLoaded', function ()
     sitePage.appendChild(buttonsZoneSite);
     sitePage.appendChild(finishZoneSite);
     sitePage.appendChild(validateBtnSite);
+    sitePage.appendChild(warning2);
 
     isolatedWrapper.appendChild(sitePage);
     isolatedWrapper.appendChild(formationPage);
     isolatedWrapper.appendChild(initPage);
     isolatedWrapper.appendChild(closeBtnBorder);
-    isolatedWrapper.appendChild(warning);
 
     mainContent.appendChild(isolatedWrapper);
 
@@ -366,7 +374,7 @@ document.addEventListener('DOMContentLoaded', function ()
 
     
     /* Grand/moyen écran */
-        @media (min-width: 401px)
+        @media (min-width: 541px)
         {
 
         /* style de la pop-up */
@@ -468,7 +476,7 @@ document.addEventListener('DOMContentLoaded', function ()
             .uk-warning-chatbot
             {
                 position: absolute;
-                right: 115px;
+                right: 165px;
                 bottom: 1px;
                 z-index: 1;
                 opacity: 0.75;
@@ -482,6 +490,17 @@ document.addEventListener('DOMContentLoaded', function ()
                 text-align: center;
                 color: #c04848;
                 opacity: 1;
+            }
+
+            .uk-warning-chatbot2
+            {
+                position: absolute;
+                right: 125px;
+                bottom: 1px;
+                z-index: 1;
+                opacity: 0.75;
+                color: #c04848;
+                font-size: 12px
             }
 
     /* style de la page d'initialisation */
@@ -991,10 +1010,8 @@ document.addEventListener('DOMContentLoaded', function ()
                 }
                     #uk-retourFormationBtn-formation-chatbot
                     {
-                        border-top-right-radius: 8px;
-                        border-bottom-right-radius: 8px;
                         border: none;
-                        border-left: solid 0.5px #c04848;
+                        border-right: solid 0.5px #c04848;
                         opacity: 1;
                     }
                     #uk-retourFormationBtn-formation-chatbot:hover
@@ -1366,7 +1383,7 @@ document.addEventListener('DOMContentLoaded', function ()
 
 
     /* Petit écran */
-        @media (max-width: 400px)
+        @media (max-width: 540px)
         {
 
         /* style de la pop-up */
@@ -1468,7 +1485,7 @@ document.addEventListener('DOMContentLoaded', function ()
             .uk-warning-chatbot
             {
                 position: absolute;
-                right: 22px;
+                right: 35px;
                 bottom: 1px;
                 z-index: 1;
                 opacity: 0.75;
@@ -3034,12 +3051,12 @@ document.addEventListener('DOMContentLoaded', function ()
 
             setTimeout(() =>
             {
-                showMessageFormation(messageInnerFormation, "⚠️ Le fait de ne pas posséder une compétence demandé par une formation ne bloque pas l'accès : les formations sont justement faites pour apprendre et développer ces compétences.", 'bot');
+                showMessageFormation(messageInnerFormation, "Je vais vous poser des questions et vous me direz si vous pensez posséder cette faculté ou pas.", 'bot');
             }, 250);
 
             setTimeout(() =>
             {
-                showMessageFormation(messageInnerFormation, "Je vais vous poser des questions et vous me direz si vous pensez posséder cette faculté ou pas.", 'bot');
+                showMessageFormation(messageInnerFormation, "⚠️ Le fait de ne pas posséder une faculté demandé par une formation ne bloque pas l'accès : les formations sont justement faites pour apprendre et développer ces compétences.", 'bot');
             }, 350);
 
             const SoftSkillsData =
@@ -4000,6 +4017,7 @@ document.addEventListener('DOMContentLoaded', function ()
             sessionStorage.removeItem('userNiveau');
 
             sessionStorage.removeItem('formationConseil');
+            sessionStorage.removeItem('formationConseil2');
 
             sessionStorage.removeItem('linkHistory');
 
@@ -4030,6 +4048,7 @@ document.addEventListener('DOMContentLoaded', function ()
             sessionStorage.removeItem('userNiveau');
 
             sessionStorage.removeItem('formationConseil');
+            sessionStorage.removeItem('formationConseil2');
             
             sessionStorage.removeItem('linkHistory');
 
