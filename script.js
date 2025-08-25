@@ -3075,7 +3075,7 @@ document.addEventListener('DOMContentLoaded', function ()
          * - Affiche une zone interactive contenant des boutons.
          * - Présente progressivement des messages d’introduction via un bot.
          * - Parcourt une liste de soft skills (aptitudes comportementales).
-         * - Pour chaque aptitude, demande à l’utilisateur s’il pense la posséder.
+         * - Pour chaque aptitude, demande à l’utilisateur s’il pense la posséder.àà
          * - Enregistre les réponses (oui/non) dans `sessionStorage`.
          * 
          * À la fin du questionnaire :
