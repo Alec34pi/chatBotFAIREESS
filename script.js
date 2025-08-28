@@ -2391,7 +2391,6 @@ document.addEventListener('DOMContentLoaded', function ()
         localStorage.setItem("loadCount", loadCount);
 
         if (loadCount >= 15) {
-            console.log("🔄 Reset après 15 chargements");
             localStorage.setItem("firstOpen", "true");
             localStorage.setItem("loadCount", "0");
         }
