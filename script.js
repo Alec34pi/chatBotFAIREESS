@@ -8,12 +8,15 @@ document.addEventListener('DOMContentLoaded', function ()
         const popupState = document.createElement('div');
         popupState.id =    'uk-popupState-chatbot';
 
-            const popupMascotte =       document.createElement('video');
-            popupMascotte.src =         'https://raw.githubusercontent.com/Alec34pi/IRTSMascotte/master/popupM.mp4';
-            popupMascotte.loop =        true;
-            popupMascotte.muted =       true;
-            popupMascotte.playsInline = true;
-            popupMascotte.id =          'uk-popupMascotte-chatbot';
+            const popupMascotte =                       document.createElement('video');
+            popupMascotte.src =                         'https://raw.githubusercontent.com/Alec34pi/IRTSMascotte/master/popupM.mp4';
+            popupMascotte.autoplay =                    true;
+            popupMascotte.loop =                        true;
+            popupMascotte.muted =                       true;
+            popupMascotte.playsInline =                 true;
+            popupMascotte.disablepictureinpicture =     true;
+            popupMascotte.controlslist =                "nodownload nofullscreen noremoteplayback" 
+            popupMascotte.id =                          'uk-popupMascotte-chatbot';
 
         const mainContent = document.createElement('div');
         mainContent.id =    'uk-mainContent-chatbot';
@@ -45,12 +48,14 @@ document.addEventListener('DOMContentLoaded', function ()
                 initTitle.textContent = 'Bonjour';
 
                 const initMascotte =            document.createElement('video');
-                    initMascotte.src =          'https://raw.githubusercontent.com/Alec34pi/IRTSMascotte/master/initM.mp4';
-                    initMascotte.loop =         true;
-                    initMascotte.muted =        true;
-                    initMascotte.autoplay =     true;
-                    initMascotte.playsInline =  true;
-                    initMascotte.id =           'uk-initMascotte-chatbot';
+                    initMascotte.src =                      'https://raw.githubusercontent.com/Alec34pi/IRTSMascotte/master/initM.mp4';
+                    initMascotte.loop =                     true;
+                    initMascotte.muted =                    true;
+                    initMascotte.autoplay =                 true;
+                    initMascotte.playsInline =              true;
+                    initMascotte.disablepictureinpicture =  true;
+                    initMascotte.controlslist=              "nodownload nofullscreen noremoteplayback" 
+                    initMascotte.id =                       'uk-initMascotte-chatbot';
 
                 const initButtons = document.createElement('div');
                 initButtons.id =    'uk-initButtons-chatbot';
@@ -96,12 +101,14 @@ document.addEventListener('DOMContentLoaded', function ()
                     messageZoneFormation.appendChild(messageInnerFormation);
 
                 const formationMascotte =               document.createElement('video');
-                    formationMascotte.src =             'https://raw.githubusercontent.com/Alec34pi/IRTSMascotte/master/tchatM.mp4';
-                    formationMascotte.loop =            true;
-                    formationMascotte.muted =           true;
-                    formationMascotte.autoplay =        true;
-                    formationMascotte.playsInline =     true;
-                    formationMascotte.id =              'uk-formationMascotte-formation-chatbot';
+                    formationMascotte.src =                         'https://raw.githubusercontent.com/Alec34pi/IRTSMascotte/master/tchatM.mp4';
+                    formationMascotte.loop =                        true;
+                    formationMascotte.muted =                       true;
+                    formationMascotte.autoplay =                    true;
+                    formationMascotte.playsInline =                 true;
+                    formationMascotte.disablepictureinpicture =     true;
+                    formationMascotte.controlslist =                "nodownload nofullscreen noremoteplayback" 
+                    formationMascotte.id =                          'uk-formationMascotte-formation-chatbot';
 
                 const texteZoneFormation = document.createElement('div');
                 texteZoneFormation.id =    'uk-formationTexteZone-formation-chatbot';
@@ -230,13 +237,15 @@ document.addEventListener('DOMContentLoaded', function ()
                     messageInnerSite.id =    'uk-messageInnerSite-Site-chatbot';
                     messageZoneSite.appendChild(messageInnerSite);
 
-                const siteMascotte =            document.createElement('video');
-                    siteMascotte.src =          'https://raw.githubusercontent.com/Alec34pi/IRTSMascotte/master/tchatM.mp4';
-                    siteMascotte.loop =         true;
-                    siteMascotte.muted =        true;
-                    siteMascotte.autoplay =     true;
-                    siteMascotte.playsInline =  true;
-                    siteMascotte.id =           'uk-siteMascotte-chatbot';
+                const siteMascotte =                        document.createElement('video');
+                    siteMascotte.src =                      'https://raw.githubusercontent.com/Alec34pi/IRTSMascotte/master/tchatM.mp4';
+                    siteMascotte.loop =                     true;
+                    siteMascotte.muted =                    true;
+                    siteMascotte.autoplay =                 true;
+                    siteMascotte.playsInline =              true;
+                    siteMascotte.disablepictureinpicture =  true;
+                    siteMascotte.controlslist =             "nodownload nofullscreen noremoteplayback" 
+                    siteMascotte.id =                       'uk-siteMascotte-chatbot';
 
                 const buttonsZoneSite = document.createElement('div');
                 buttonsZoneSite.id =    'uk-SiteButtonsZone-Site-chatbot';
@@ -406,6 +415,7 @@ document.addEventListener('DOMContentLoaded', function ()
                 transform: translate(-50%, -50%);
                 display: block;
                 opacity: 1;
+                pointer-events: none;
             }
 
     /* style de la page */
@@ -511,6 +521,7 @@ document.addEventListener('DOMContentLoaded', function ()
                 transition: all 0.3s ease;
                 opacity: 1;
                 border-radius: 15px;
+                pointer-events: none;
             }
             #uk-initButtons-chatbot
             {
@@ -691,6 +702,7 @@ document.addEventListener('DOMContentLoaded', function ()
                 margin: 20px auto;
                 opacity: 1;
                 border-radius: 5px;
+                pointer-events: none;
             }
 
             #uk-formationTexteZone-formation-chatbot
@@ -1220,6 +1232,7 @@ document.addEventListener('DOMContentLoaded', function ()
                     margin: 20px auto;
                     opacity: 1;
                     border-radius: 5px;
+                    pointer-events: none;
                 }
 
                 #uk-SiteSelectZone-Site-chatbot
@@ -1413,6 +1426,7 @@ document.addEventListener('DOMContentLoaded', function ()
                 transform: translate(-50%, -50%);
                 display: block;
                 opacity: 1;
+                pointer-events: none;
             }
 
     /* style de la page */
@@ -1508,6 +1522,7 @@ document.addEventListener('DOMContentLoaded', function ()
                 transition: all 0.3s ease;
                 opacity: 1;
                 border-radius: 15px;
+                pointer-events: none;
             }
             #uk-initButtons-chatbot
             {
@@ -1690,6 +1705,7 @@ document.addEventListener('DOMContentLoaded', function ()
                 margin: 20px auto;
                 opacity: 1;
                 border-radius: 3px;
+                pointer-events: none;
             }
 
             #uk-formationTexteZone-formation-chatbot
@@ -2204,6 +2220,7 @@ document.addEventListener('DOMContentLoaded', function ()
                     margin: 20px auto;
                     opacity: 1;
                     border-radius: 3px;
+                    pointer-events: none;
                 }
 
                     #uk-SiteSelectZone-Site-chatbot
@@ -2381,6 +2398,22 @@ document.addEventListener('DOMContentLoaded', function ()
     }
 
 
+    let PageOpen = sessionStorage.getItem("PageOpen");
+
+    if (PageOpen === "formation") {
+        ouvrirPopup();
+        trouverFormation();
+        let PageOpen = sessionStorage.getItem("PageOpen");
+    } else if (PageOpen === "site") {
+        ouvrirPopup();
+        chercherSite();
+        let PageOpen = sessionStorage.getItem("PageOpen");
+    }
+    else{}
+
+
+
+
     /**
      * Gère l’ouverture de la pop-up de formation.
      * 
@@ -2422,6 +2455,9 @@ document.addEventListener('DOMContentLoaded', function ()
         sitePage.style.display =              'none';
         messageInnerFormation.innerHTML =     '';
         messageInnerSite.innerHTML =          '';
+
+        sessionStorage.removeItem("PageOpen");
+        let PageOpen = sessionStorage.getItem("PageOpen");
     }
 
 
@@ -2448,6 +2484,8 @@ document.addEventListener('DOMContentLoaded', function ()
     formationBtn.addEventListener('click', trouverFormation);
     function trouverFormation()
     {
+        sessionStorage.setItem('PageOpen', "formation");
+
         initPage.style.display =        'none';
         formationPage.style.display =   'block';
 
@@ -4065,6 +4103,8 @@ document.addEventListener('DOMContentLoaded', function ()
             initPage.style.display =        'flex';
 
             messageInnerFormation.innerHTML = '';
+
+            sessionStorage.removeItem("PageOpen");
         }
 
 
@@ -4173,6 +4213,8 @@ document.addEventListener('DOMContentLoaded', function ()
     siteBtn.addEventListener('click', chercherSite)
     function chercherSite()
     {
+        sessionStorage.setItem('PageOpen', "site");
+
         initPage.style.display =    'none';
         sitePage.style.display =    'block';
 
@@ -5317,6 +5359,8 @@ document.addEventListener('DOMContentLoaded', function ()
             initPage.style.display =        'flex';
 
             messageInnerSite.innerHTML =    '';
+
+            sessionStorage.removeItem("PageOpen");
         }
 
 
