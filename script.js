@@ -2361,6 +2361,24 @@ document.addEventListener('DOMContentLoaded', function ()
 
 
 
+    let firstOpen = localStorage.getItem("firstOpen");
+    let loadCount = parseInt(localStorage.getItem("loadCount")) || 0;
+
+    if (firstOpen === null || firstOpen === "true") {
+        ouvrirPopup();
+        localStorage.setItem("firstOpen", "false");
+    }
+    else
+    {
+        loadCount++;
+        localStorage.setItem("loadCount", loadCount);
+
+        if (loadCount >= 15) {
+            console.log("🔄 Reset après 15 chargements");
+            localStorage.setItem("firstOpen", "true");
+            localStorage.setItem("loadCount", "0");
+        }
+    }
 
 
     /**
