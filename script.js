@@ -195,7 +195,7 @@ document.addEventListener('DOMContentLoaded', function ()
 
                     const retourDebut =        document.createElement('button');
                     retourDebut.id =           'uk-formationRetourDebutBtn-formation-chatbot';
-                    retourDebut.textContent =  'retour au début de la conversation';
+                    retourDebut.textContent =  'sélectionner un autre métier';
 
                 const validateBtnFormation1 =     document.createElement('button');
                 validateBtnFormation1.id =        'uk-formationValidateBtn1-formation-chatbot';
@@ -2579,7 +2579,8 @@ document.addEventListener('DOMContentLoaded', function ()
                     askReturnFormationConseille2()
                     break;
             }
-        } else
+        }
+        else
         { 
             afficherZone('text');
 
@@ -3106,7 +3107,7 @@ document.addEventListener('DOMContentLoaded', function ()
 
             setTimeout(() =>
             {
-                showMessageFormation(messageInnerFormation, "Vous voulez voir les métiers qui vous correspondent ou repartir du début de la conversation ?", 'bot');
+                showMessageFormation(messageInnerFormation, "Vous voulez voir les métiers qui vous correspondent selon votre profil ou sélectionner un autre métier", 'bot');
             }, 300);
         }
 
@@ -4120,7 +4121,6 @@ document.addEventListener('DOMContentLoaded', function ()
          */
         resetBtnFormation.addEventListener('click', resetChat);
         finishBtnFormation.addEventListener('click', resetChat);
-        retourDebut.addEventListener('click', resetChat);
         returnStart.addEventListener('click', resetChat);
         function resetChat()
         {
@@ -4145,6 +4145,31 @@ document.addEventListener('DOMContentLoaded', function ()
             trouverFormation();
         }
 
+        
+        retourDebut.addEventListener('click', returnChoiceFormation2);
+        function returnChoiceFormation2()
+        {   
+            messageInnerFormation.innerHTML = '';
+
+            sessionStorage.removeItem('experience');
+
+            sessionStorage.removeItem('currentStepFormation');
+            sessionStorage.removeItem('chatHistoryFormation');
+
+            sessionStorage.removeItem('currentStepSoftSkills');
+            sessionStorage.removeItem('reponseUserSoftSkills');
+            sessionStorage.removeItem('userNiveau');
+
+            sessionStorage.removeItem('formationConseil');
+            sessionStorage.removeItem('formationConseil2');
+
+            sessionStorage.removeItem('linkHistory');
+
+            showMessageFormation(messageInnerFormation, "sélectionner un autre métier", 'user');
+
+            showFormationSelection();
+        }
+
 
         /**
          * Gère le retour à l'étape de sélection des compétences.
@@ -4160,7 +4185,6 @@ document.addEventListener('DOMContentLoaded', function ()
         {
             messageInnerFormation.innerHTML = '';
             sessionStorage.removeItem('chatHistoryFormation');
-            showMessageFormation(messageInnerFormation, "retourner aux choix des compétences", 'user');
 
             sessionStorage.removeItem('currentStepSoftSkills');
             currentStepSoftSkills = 0;
@@ -4172,6 +4196,7 @@ document.addEventListener('DOMContentLoaded', function ()
             sessionStorage.removeItem('formationConseil2');
             
             sessionStorage.removeItem('linkHistory');
+            showMessageFormation(messageInnerFormation, "retourner aux choix des compétences", 'user');
 
             softSkillsQuestion(currentStepSoftSkills);
         }
